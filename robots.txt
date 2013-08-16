@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://XuHaoJun.github.io/sitemap.xml 
