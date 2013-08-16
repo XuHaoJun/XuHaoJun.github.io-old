@@ -98,3 +98,6 @@ google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: false
+
+# Emacs org-octopress setting
+permalink: /blog/:year-:month-:day-:title.html
