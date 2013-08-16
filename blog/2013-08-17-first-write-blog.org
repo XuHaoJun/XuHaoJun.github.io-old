@@ -1,0 +1,14 @@
+#+TITLE: 第一次寫Blog
+#+DATE: 2013-08-17
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES:
+#+JEKYLL_PUBLISHED: true
+
+* Why?
+  上大學後發現太久沒寫文章過，想練練撰寫文章的能力，所以創了個Blog在github。
+* 主要Blog的內容
+  分享一些跟技術或電腦有關的心得，由於撰寫能力不知道退化到什麼地步，以少量多篇慢慢開始吧！
+
+
+{{{more}}}
