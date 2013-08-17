@@ -4,7 +4,7 @@
   <title><![CDATA[XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-17T18:11:21+08:00</updated>
+  <updated>2013-08-17T21:42:48+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -28,7 +28,7 @@ efficient and especially more keyboard accessible.
 </p>
 </blockquote>
 <p>
-<a href="http://5digits.org/pentadactyl/index">Pentadactyl</a> 是一個能讓你快速瀏覽網頁的一個火狐插件，其特點是用Vim-like的方式來使
+<a href="http://5digits.org/pentadactyl/index">Pentadactyl</a> 是一個能讓你快速瀏覽網頁的一個火狐插件，其特點是用 Vim-like 的方式來使
 用，也可以是說是以鍵盤來做瀏覽動作的一套按法。
 </p>
 </div>
@@ -39,7 +39,7 @@ efficient and especially more keyboard accessible.
 <div class="outline-text-2" id="text-2">
 <p>
 <!-- more -->
-先聲明有些是定制後的Pentadactyl才有的，所以預設的行為會和以下有些出入，還有我的鍵
+先聲明有些是定制後的 Pentadactyl 才有的，所以預設的行為會和以下有些出入，還有我的鍵
 盤的敏感度也調高了。
 </p>
 </div>
@@ -71,15 +71,15 @@ efficient and especially more keyboard accessible.
 <h3 id="sec-2-3">開啟網頁</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
-<code>o</code> 在當前頁面開啟網頁， <code>t</code> 為開在新分頁，開啟後鍵入關鍵字，預設會使用Google搜尋，
-有個很棒的功能叫Auto-Completion，使用時會根據關鍵字給予補全，這類似你在Google的搜
+<code>o</code> 在當前頁面開啟網頁， <code>t</code> 為開在新分頁，開啟後鍵入關鍵字，預設會使用 Google 搜尋，
+有個很棒的功能叫 Auto-Completion ，使用時會根據關鍵字給予補全，這類似你在 Google 的搜
 尋欄鍵入關鍵字時會從下方跑出一個列表供你選擇，常用補全的東西有歷史紀錄和剛剛提到
 搜尋引擎的補全，更多其他補全我也還不清楚但已經很夠用了。
 </p>
 
 <p>
-例如輸入個巴會出現我最近看到的和巴哈姆特 有關聯的網址和title但卻還跑出和巴士海峽
-相關的東西，當然能允許你更精確列出來，接個空白鍵和gamer或哈，就會產生更加有關聯的
+例如輸入個巴會出現我最近看到的和巴哈姆特 有關聯的網址和 title 但卻還跑出和巴士海峽
+相關的東西，當然能允許你更精確列出來，接個空白鍵和 gamer 或哈，就會產生更加有關聯的
 資訊了。
 </p>
 </div>
@@ -113,7 +113,7 @@ efficient and especially more keyboard accessible.
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[第一次寫Blog]]></title>
+    <title type="html"><![CDATA[第一次寫 Blog]]></title>
     <link href="http://XuHaoJun.github.io/blog/2013-08-17-first-write-blog.html"/>
     <updated>2013-08-17T00:00:00+08:00</updated>
     <id>http://XuHaoJun.github.io/blog/first-write-blog</id>
@@ -121,13 +121,13 @@ efficient and especially more keyboard accessible.
 <h2 id="sec-1">Why?</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-上大學後發現太久沒寫文章過，想練練撰寫文章的能力，所以創了個Blog在github。
+上大學後發現太久沒寫文章過，想練練撰寫文章的能力，所以創了個 Blog 在 github 。
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">主要Blog的內容</h2>
+<h2 id="sec-2">主要 Blog 的內容</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 分享一些跟技術或電腦有關的心得，由於撰寫能力不知道退化到什麼地步，以少量多篇慢慢開始吧！
@@ -157,13 +157,13 @@ efficient and especially more keyboard accessible.
 </div>
 
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">初入Web</h2>
+<h2 id="sec-2">初入 Web</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-  關於網頁的知識處於懵懵懂懂的狀態，所去了<a href="http://www.codecademy.com/">Codecademy</a> 學了些基本的Html和Css語法後
-<!-- more -->看到了也有Ruby的教學，靈光一閃想起了一個東西 <code>Ruby on Rails</code> ，一個Web應用框
-架！結束了在Codecademy的Ruby教學，遂開始了Rails的<a href="http://ihower.tw/rails3/index.html">學習</a> ，不料這完完全全就是個坑，什麼
-<code>MVC架構</code> 和 <code>Restful</code> 還有Ruby的 =Convention over configuration=對新手來說實在太痛了，
+關於網頁的知識處於懵懵懂懂的狀態，所去了<a href="http://www.codecademy.com/"> Codecademy</a> 學了些基本的 Html 和 Css 語法後
+<!-- more -->看到了也有 Ruby 的教學，靈光一閃想起了一個東西 <code>Ruby on Rails</code> ，一個Web應用框
+架！結束了在 Codecademy 的 Ruby 教學，遂開始了 Rails 的<a href="http://ihower.tw/rails3/index.html">學習</a> ，不料這完完全全就是個坑，什麼
+<code>MVC架構</code> 和 <code>Restful</code> 還有 Ruby 的 =Convention over configuration=對新手來說實在太痛了，
 我看在撐一個禮拜看能不能習慣。
 </p>
 </div>

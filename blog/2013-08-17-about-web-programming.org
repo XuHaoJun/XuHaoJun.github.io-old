@@ -7,11 +7,11 @@
 #+JEKYLL_COMMENTS: true
 * 因為暑假很無聊，所以...
   來學學網頁設計！
-* 初入Web
-  關於網頁的知識處於懵懵懂懂的狀態，所去了[[http://www.codecademy.com/][Codecademy]] 學了些基本的Html和Css語法後
-{{{more}}}看到了也有Ruby的教學，靈光一閃想起了一個東西 =Ruby on Rails= ，一個Web應用框
-架！結束了在Codecademy的Ruby教學，遂開始了Rails的[[http://ihower.tw/rails3/index.html][學習]] ，不料這完完全全就是個坑，什麼
-=MVC架構= 和 =Restful= 還有Ruby的 =Convention over configuration=對新手來說實在太痛了，
+* 初入 Web
+關於網頁的知識處於懵懵懂懂的狀態，所去了[[http://www.codecademy.com/][ Codecademy]] 學了些基本的 Html 和 Css 語法後
+{{{more}}}看到了也有 Ruby 的教學，靈光一閃想起了一個東西 =Ruby on Rails= ，一個Web應用框
+架！結束了在 Codecademy 的 Ruby 教學，遂開始了 Rails 的[[http://ihower.tw/rails3/index.html][學習]] ，不料這完完全全就是個坑，什麼
+=MVC架構= 和 =Restful= 還有 Ruby 的 =Convention over configuration=對新手來說實在太痛了，
 我看在撐一個禮拜看能不能習慣。
 * 結論
   雖然學了些東西不過還是沒有對做一個網頁有什麼實體的感覺，看到一些Rails的課程著重於實
