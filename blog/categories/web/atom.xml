@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-17T15:28:17+08:00</updated>
+  <updated>2013-08-17T18:11:21+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -34,12 +34,11 @@
 <h2 id="sec-2">初入Web</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-關於網頁的知識處於懵懵懂懂的狀態，所去了<a href="http://www.codecademy.com/">Codecademy</a> 學了些基本的Html和Css語法後
-<!-- more -->
-看到了也有Ruby的教學，靈光一閃想起了一個東西 <code>Ruby on Rails</code> ，一個Web應用框架！
-結束了在Codecademy的Ruby教學，遂開始了Rails的<a href="http://ihower.tw/rails3/index.html">學習</a> ，不料這完完全全就是個坑，
-什麼 <code>MVC架構</code> 和 <code>Restful</code> 還有Ruby的 <code>Convention over configuration</code>
-對新手來說實在太痛了，我看在撐一個禮拜看能不能習慣。
+  關於網頁的知識處於懵懵懂懂的狀態，所去了<a href="http://www.codecademy.com/">Codecademy</a> 學了些基本的Html和Css語法後
+<!-- more -->看到了也有Ruby的教學，靈光一閃想起了一個東西 <code>Ruby on Rails</code> ，一個Web應用框
+架！結束了在Codecademy的Ruby教學，遂開始了Rails的<a href="http://ihower.tw/rails3/index.html">學習</a> ，不料這完完全全就是個坑，什麼
+<code>MVC架構</code> 和 <code>Restful</code> 還有Ruby的 =Convention over configuration=對新手來說實在太痛了，
+我看在撐一個禮拜看能不能習慣。
 </p>
 </div>
 </div>
@@ -51,8 +50,8 @@
 <h2 id="sec-3">結論</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-雖然學了些東西不過還是沒有對做一個網頁有什麼實體的感覺，看到一些Rails的課程著重於
-實戰，真心想報名!，不過暑假快過完了，我看就靠自己摸索吧。
+雖然學了些東西不過還是沒有對做一個網頁有什麼實體的感覺，看到一些Rails的課程著重於實
+戰，真心想報名!，不過暑假快過完了，我看就靠自己摸索吧。
 </p>
 </div>
 </div>
