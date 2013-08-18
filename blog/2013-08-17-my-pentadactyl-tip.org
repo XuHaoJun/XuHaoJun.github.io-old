@@ -6,7 +6,6 @@
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
 
-* 簡介
 #+BEGIN_QUOTE
 Pentadactyl is a free browser add-on for Firefox, designed to make browsing more
 efficient and especially more keyboard accessible.
