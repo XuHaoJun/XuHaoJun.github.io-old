@@ -28,7 +28,7 @@
                     'han/org-html-delete-extra-space))
   #+END_SRC
 
-順便吐槽一下 emacs 裡的 regex ，實在太多\了 \\
+順便吐槽一下 emacs 裡的 regex ，實在太多 =\= 了 \\
 這是上面連結文中 Ruby 的 Regex 樣式：
 #+BEGIN_SRC ruby
       # \p{Han} 是漢字
