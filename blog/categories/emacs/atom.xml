@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emacs | XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/blog/categories/emacs/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-19T10:18:38+08:00</updated>
+  <updated>2013-08-19T10:21:14+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -71,7 +71,7 @@
 
 
 <p>
-順便吐槽一下 emacs 裡的 regex ，實在太多\了 <br/>
+順便吐槽一下 emacs 裡的 regex ，實在太多 <code>\</code> 了 <br/>
 這是上面連結文中 Ruby 的 Regex 樣式：
 </p>
 
