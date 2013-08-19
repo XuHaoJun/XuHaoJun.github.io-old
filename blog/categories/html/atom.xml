@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: html | XuBlog]]></title>
+  <link href="http://XuHaoJun.github.io/blog/categories/html/atom.xml" rel="self"/>
+  <link href="http://XuHaoJun.github.io/"/>
+  <updated>2013-08-19T10:18:38+08:00</updated>
+  <id>http://XuHaoJun.github.io/</id>
+  <author>
+    <name><![CDATA[XuHaoJun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[解決 Org-mode(8.x) 轉 Html 中文換行變空格問題]]></title>
+    <link href="http://XuHaoJun.github.io/blog/2013-08-19-han-extra-space-org-mode.html"/>
+    <updated>2013-08-19T00:00:00+08:00</updated>
+    <id>http://XuHaoJun.github.io/blog/han-extra-space-org-mode</id>
+    <content type="html"><![CDATA[<p>
+基本上是照這兩篇提供的解法去依樣畫葫蘆出來的 org-mode 版本。
+</p>
+
+
+<ul class="org-ul">
+<li><a href="http://stackoverflow.com/questions/8550112/prevent-browser-converting-n-between-lines-into-space-for-chinese-characters/8551033#8551033">Prevent browser converting '\n' between lines into space (for Chinese characters)</a>
+</li>
+<li><a href="http://chenyufei.info/blog/2011-12-23/fix-chinese-newline-becomes-space-in-browser-problem/">解决 Markdown 转 HTML 中文换行变空格的问题</a>
+</li>
+</ul>
+
+
+
+
+<p>
+<!-- more -->
+</p>
+
+
+
+
+<p>
+大致上的解法是將 html 檔案裡，將中文字後有接個換行符的把他合併為一行。 <br/>
+感覺上是個 workaround 的方法，如果在餵給 rss 似乎又會有問題，不過我無法忍受那些多餘的空格。
+</p>
+
+
+
+
+<p>
+代碼如下：
+</p>
+
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(<span style="color: #859900; font-weight: bold;">defun</span> <span style="color: #268bd2;">han/org-html-delete-extra-space</span> (string backend info)
+  <span style="color: #2aa198;">"Let chinese word to a line if match /han\newline/"</span>
+  (<span style="color: #859900; font-weight: bold;">when</span> (and (org-export-derived-backend-p backend 'html)
+             (string-match <span style="color: #2aa198;">"\\cc\n"</span> string))
+    (replace-regexp-in-string <span style="color: #2aa198;">"</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">(</span><span style="color: #2aa198;">\\cc</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">)</span><span style="color: #2aa198;">\n</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">(</span><span style="color: #2aa198;">\\cc</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">)</span><span style="color: #2aa198;">"</span> <span style="color: #2aa198;">"\\1\\2"</span> string)))
+
+(<span style="color: #859900; font-weight: bold;">eval-after-load</span> 'ox-html
+  '(add-to-list 'org-export-filter-final-output-functions
+                'han/org-html-delete-extra-space))
+</pre>
+</div>
+
+
+
+
+<p>
+順便吐槽一下 emacs 裡的 regex ，實在太多\了 <br/>
+這是上面連結文中 Ruby 的 Regex 樣式：
+</p>
+
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #586e75;"># </span><span style="color: #586e75;">\p{Han} &#26159;&#28450;&#23383;</span>
+gsub(<span style="color: #2aa198;">/(\p{Han})\n(\p{Han})/</span>m, <span style="color: #2aa198;">'\1\2'</span>)
+</pre>
+</div>
+
+
+<p>
+這是 emacs-lisp 的：
+</p>
+
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp"><span style="color: #586e75;">;; </span><span style="color: #586e75;">\\cc &#26159;&#28450;&#23383;</span>
+(replace-regexp-in-string <span style="color: #2aa198;">"</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">(</span><span style="color: #2aa198;">\\cc</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">)</span><span style="color: #2aa198;">\n</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">(</span><span style="color: #2aa198;">\\cc</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">)</span><span style="color: #2aa198;">"</span> <span style="color: #2aa198;">"\\1\\2"</span> string)
+</pre>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

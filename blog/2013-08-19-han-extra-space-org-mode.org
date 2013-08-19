@@ -1,0 +1,41 @@
+#+TITLE: 解決 Org-mode(8.x) 轉 Html 中文換行變空格問題
+#+DATE: 2013-08-19
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: emacs org-mode html
+#+JEKYLL_PUBLISHED: true
+
+基本上是照這兩篇提供的解法去依樣畫葫蘆出來的 org-mode 版本。
++ [[http://stackoverflow.com/questions/8550112/prevent-browser-converting-n-between-lines-into-space-for-chinese-characters/8551033#8551033][Prevent browser converting '\n' between lines into space (for Chinese characters)]]
++ [[http://chenyufei.info/blog/2011-12-23/fix-chinese-newline-becomes-space-in-browser-problem/][解决 Markdown 转 HTML 中文换行变空格的问题]]
+
+{{{more}}}
+
+大致上的解法是將 html 檔案裡，將中文字後有接個換行符的把他合併為一行。 \\
+感覺上是個 workaround 的方法，如果在餵給 rss 似乎又會有問題，不過我無法忍受那些
+多餘的空格。
+
+代碼如下：
+  #+BEGIN_SRC emacs-lisp
+    (defun han/org-html-delete-extra-space (string backend info)
+      "Let chinese word to a line if match /han\newline/"
+      (when (and (org-export-derived-backend-p backend 'html)
+                 (string-match "\\cc\n" string))
+        (replace-regexp-in-string "\\(\\cc\\)\n\\(\\cc\\)" "\\1\\2" string)))
+
+    (eval-after-load 'ox-html
+      '(add-to-list 'org-export-filter-final-output-functions
+                    'han/org-html-delete-extra-space))
+  #+END_SRC
+
+順便吐槽一下 emacs 裡的 regex ，實在太多\了 \\
+這是上面連結文中 Ruby 的 Regex 樣式：
+#+BEGIN_SRC ruby
+      # \p{Han} 是漢字
+      gsub(/(\p{Han})\n(\p{Han})/m, '\1\2')
+#+END_SRC
+這是 emacs-lisp 的：
+#+BEGIN_SRC emacs-lisp
+    ;; \\cc 是漢字
+    (replace-regexp-in-string "\\(\\cc\\)\n\\(\\cc\\)" "\\1\\2" string)
+#+END_SRC
