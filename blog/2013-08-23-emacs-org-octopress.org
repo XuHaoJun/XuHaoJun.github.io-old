@@ -6,6 +6,20 @@
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
 
+- 優點
+ + 免費網域、免費託管、免費流量
+ + 絕對管理權
+ + 版本管理，不用擔心備份！
+ + Org-mode or Markdown 撰寫效率好
+- 缺點
+ + 技術門檻要求較高 \\
+   需要懂一些 Git, Github, Org-mode 或 Makrdown，更進階要客製化 Blog 的話，可能還要
+   懂些許 Ruby (jekyll)
+
+{{{more}}}
+
+-------------------------------------------------------------------------------
+
 * Org-mode
 #+BEGIN_QUOTE
 Org mode is for keeping notes, maintaining TODO lists, planning projects, and
@@ -14,9 +28,8 @@ authoring documents with a fast and effective plain-text system. \\
 #+END_QUOTE
 Org-mode 是建立於 Emacs(編輯器) 之上的插件，是一種輕量級的標記語言可以用來做時間
 管理、筆記、生成 Html ... ，同類型的流行的還有 Markdown，這篇文章基本上就是
-Emacs + org-mode 寫的，之後在透過插件 [[https://github.com/yoshinari-nomura/org-octopress][org-octopress]] 轉給 Octopress。
+Emacs + org-mode 寫的，之後在透過插件 [[https://github.com/yoshinari-nomura/org-octopress][org-octopress]] 生成給 Octopress 用。
 
-{{{more}}}
 
 ** Install Emacs(24.x)
 我只會在 Linux 平台上用 Package 裝。
@@ -68,12 +81,12 @@ In octopress/_config.yml, you must set the permelink attribute: \\
 =permalink: /blog/:year-:month-:day-:title.html=
 
 * Octopress
-[[http://octopress.org/][Octopress]] 是一套 Blog 的框架，所以一開始你的 Blog 就有一個好看的外觀基礎，功能上
+[[http://octopress.org/][Octopress]] 是一套 Blog 的框架，所以一開始你的 Blog 就有一個簡潔的外觀，功能上
 有支援 Twitter, Facebook, Delicious 等等，也可以用來產生靜態 Blog 後放在 Github
 上，預設是用 Markdown 來撰寫文章。
 
 ** Install and Use Octopress
-要先安裝 [[http://www.ruby-lang.org/en/][Ruby]] 和 [[http://gitscm.com/][Git]]。
+要先安裝 [[http://www.ruby-lang.org/en/][Ruby]] 和 [[http://gitscm.com/][Git]]。 \\
 官方的方法： [[http://octopress.org/docs/setup/][Octopress Setup]]
 
 * Github
@@ -89,9 +102,7 @@ In octopress/_config.yml, you must set the permelink attribute: \\
    和標題，開始撰寫文章。
 2. 寫完後，鍵入 =C-c C-e P x octopress=
 3. 在你的 octopress 根目錄鍵入 =bundle exec rake gen_deploy=
-4. 還有 source 也要 push 上去 =git push -u origin source=
+4. 也可以把 source branch 下 push 上去做版本管理 =git push -u origin source=
 
 文章打到一半或要做確認的時候用 =bundle exec rake preview= ，之後在
 http://localhost:4000/ 可以看你的 Blog。
-
-順帶一提要 push 兩次還真累，還在找辦法解決。

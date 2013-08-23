@@ -9,8 +9,7 @@
   <meta name="author" content="XuHaoJun">
 
   
-  <meta name="description" content="Org-mode Org mode is for keeping notes, maintaining TODO lists, planning projects, and
-authoring documents with a fast and effective plain-text &hellip;">
+  <meta name="description" content="優點 免費網域、免費託管、免費流量 絕對管理權 版本管理，不用擔心備份！ Org-mode or Markdown 撰寫效率好 缺點 技術門檻要求較高 需要懂一些 Git, Github, Org-mode 或 Makrdown，更進階要客製化 Blog 的話，可能還要懂些許 Ruby ( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,7 +91,35 @@ authoring documents with a fast and effective plain-text &hellip;">
   </header>
 
 
-<div class="entry-content"><div id="outline-container-sec-1" class="outline-2">
+<div class="entry-content"><ul class="org-ul">
+<li>優點
+<ul class="org-ul">
+<li>免費網域、免費託管、免費流量
+</li>
+<li>絕對管理權
+</li>
+<li>版本管理，不用擔心備份！
+</li>
+<li>Org-mode or Markdown 撰寫效率好
+</li>
+</ul>
+</li>
+<li>缺點
+<ul class="org-ul">
+<li>技術門檻要求較高 <br/>
+   需要懂一些 Git, Github, Org-mode 或 Makrdown，更進階要客製化 Blog 的話，可能還要懂些許 Ruby (jekyll)
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<!-- more -->
+</p>
+
+<hr/>
+
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Org-mode</h2>
 <div class="outline-text-2" id="text-1">
 <blockquote>
@@ -104,13 +131,10 @@ authoring documents with a fast and effective plain-text system. <br/>
 </blockquote>
 <p>
 Org-mode 是建立於 Emacs(編輯器) 之上的插件，是一種輕量級的標記語言可以用來做時間管理、筆記、生成 Html &#x2026; ，同類型的流行的還有 Markdown，這篇文章基本上就是
-Emacs + org-mode 寫的，之後在透過插件 <a href="https://github.com/yoshinari-nomura/org-octopress">org-octopress</a> 轉給 Octopress。
-</p>
-
-<p>
-<!-- more -->
+Emacs + org-mode 寫的，之後在透過插件 <a href="https://github.com/yoshinari-nomura/org-octopress">org-octopress</a> 生成給 Octopress 用。
 </p>
 </div>
+
 
 <div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1">Install Emacs(24.x)</h3>
@@ -205,7 +229,7 @@ In octopress/_config.yml, you must set the permelink attribute: <br/>
 <h2 id="sec-2">Octopress</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-<a href="http://octopress.org/">Octopress</a> 是一套 Blog 的框架，所以一開始你的 Blog 就有一個好看的外觀基礎，功能上有支援 Twitter, Facebook, Delicious 等等，也可以用來產生靜態 Blog 後放在 Github
+<a href="http://octopress.org/">Octopress</a> 是一套 Blog 的框架，所以一開始你的 Blog 就有一個簡潔的外觀，功能上有支援 Twitter, Facebook, Delicious 等等，也可以用來產生靜態 Blog 後放在 Github
 上，預設是用 Markdown 來撰寫文章。
 </p>
 </div>
@@ -214,7 +238,8 @@ In octopress/_config.yml, you must set the permelink attribute: <br/>
 <h3 id="sec-2-1">Install and Use Octopress</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
-要先安裝 <a href="http://www.ruby-lang.org/en/">Ruby</a> 和 <a href="http://gitscm.com/">Git</a>。官方的方法： <a href="http://octopress.org/docs/setup/">Octopress Setup</a>
+要先安裝 <a href="http://www.ruby-lang.org/en/">Ruby</a> 和 <a href="http://gitscm.com/">Git</a>。 <br/>
+官方的方法： <a href="http://octopress.org/docs/setup/">Octopress Setup</a>
 </p>
 </div>
 </div>
@@ -242,17 +267,13 @@ In octopress/_config.yml, you must set the permelink attribute: <br/>
 </li>
 <li>在你的 octopress 根目錄鍵入 <code>bundle exec rake gen_deploy</code>
 </li>
-<li>還有 source 也要 push 上去 <code>git push -u origin source</code>
+<li>也可以把 source branch 下 push 上去做版本管理 <code>git push -u origin source</code>
 </li>
 </ol>
 
 <p>
 文章打到一半或要做確認的時候用 <code>bundle exec rake preview</code> ，之後在
 <a href="http://localhost:4000/">http://localhost:4000/</a> 可以看你的 Blog。
-</p>
-
-<p>
-順帶一提要 push 兩次還真累，還在找辦法解決。
 </p>
 </div>
 </div>
