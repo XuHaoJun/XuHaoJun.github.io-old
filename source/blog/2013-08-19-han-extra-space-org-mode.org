@@ -4,6 +4,7 @@
 #+JEKYLL_LAYOUT: post
 #+JEKYLL_CATEGORIES: emacs org-mode html
 #+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
 
 基本上是照這兩篇提供的解法去依樣畫葫蘆出來的 org-mode 版本。
 + [[http://stackoverflow.com/questions/8550112/prevent-browser-converting-n-between-lines-into-space-for-chinese-characters/8551033#8551033][Prevent browser converting '\n' between lines into space (for Chinese characters)]]
@@ -28,13 +29,13 @@
                     'han/org-html-delete-extra-space))
   #+END_SRC
 
-順便吐槽一下 emacs 裡的 regex ，實在太多 =\= 了 \\
+順便吐槽一下 emacs 裡的 regex，實在太多 =\= 了 \\
 這是上面連結文中 Ruby 的 Regex 樣式：
 #+BEGIN_SRC ruby
       # \p{Han} 是漢字
       gsub(/(\p{Han})\n(\p{Han})/m, '\1\2')
 #+END_SRC
-這是 emacs-lisp 的：
+這是 Emacs-lisp 的：
 #+BEGIN_SRC emacs-lisp
     ;; \\cc 是漢字
     (replace-regexp-in-string "\\(\\cc\\)\n\\(\\cc\\)" "\\1\\2" string)
