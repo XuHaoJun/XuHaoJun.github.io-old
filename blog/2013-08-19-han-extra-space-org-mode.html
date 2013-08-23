@@ -128,7 +128,7 @@
 </div>
 
 <p>
-順便吐槽一下 emacs 裡的 regex ，實在太多 <code>\</code> 了 <br/>
+順便吐槽一下 emacs 裡的 regex，實在太多 <code>\</code> 了 <br/>
 這是上面連結文中 Ruby 的 Regex 樣式：
 </p>
 <div class="org-src-container">
@@ -138,7 +138,7 @@ gsub(<span style="color: #2aa198;">/(\p{Han})\n(\p{Han})/</span>m, <span style="
 </pre>
 </div>
 <p>
-這是 emacs-lisp 的：
+這是 Emacs-lisp 的：
 </p>
 <div class="org-src-container">
 
@@ -194,9 +194,17 @@ gsub(<span style="color: #2aa198;">/(\p{Han})\n(\p{Han})/</span>m, <span style="
         <a class="basic-alignment left" href="/blog/2013-08-17-my-pentadactyl-tip.html" title="Previous Post: 使用 Pentadactyl (Firefox add-on)">&laquo; 使用 Pentadactyl (Firefox add-on)</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013-08-23-emacs-org-octopress.html" title="Next Post: Org-mode + Octopress + Github 來搭建 Blog">Org-mode + Octopress + Github 來搭建 Blog &raquo;</a>
+      
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -205,6 +213,10 @@ gsub(<span style="color: #2aa198;">/(\p{Han})\n(\p{Han})/</span>m, <span style="
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013-08-23-emacs-org-octopress.html">Org-mode + Octopress + Github 來搭建 Blog</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013-08-19-han-extra-space-org-mode.html">解決 Org-mode(8.x) 轉 Html 中文換行變空格問題</a>
@@ -247,7 +259,10 @@ gsub(<span style="color: #2aa198;">/(\p{Han})\n(\p{Han})/</span>m, <span style="
       var disqus_shortname = 'xublog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://XuHaoJun.github.io/blog/2013-08-19-han-extra-space-org-mode.html';
+        var disqus_url = 'http://XuHaoJun.github.io/blog/2013-08-19-han-extra-space-org-mode.html';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

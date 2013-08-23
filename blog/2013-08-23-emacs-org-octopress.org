@@ -1,0 +1,97 @@
+#+TITLE: Org-mode + Octopress + Github 來搭建 Blog
+#+DATE: 2013-08-23
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: emacs org-mode octopress github
+#+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
+
+* Org-mode
+#+BEGIN_QUOTE
+Org mode is for keeping notes, maintaining TODO lists, planning projects, and
+authoring documents with a fast and effective plain-text system. \\
+*[[http://orgmode.org/]]*
+#+END_QUOTE
+Org-mode 是建立於 Emacs(編輯器) 之上的插件，是一種輕量級的標記語言可以用來做時間
+管理、筆記、生成 Html ... ，同類型的流行的還有 Markdown，這篇文章基本上就是
+Emacs + org-mode 寫的，之後在透過插件 [[https://github.com/yoshinari-nomura/org-octopress][org-octopress]] 轉給 Octopress。
+
+{{{more}}}
+
+** Install Emacs(24.x)
+我只會在 Linux 平台上用 Package 裝。
+
+一些流行的 Linux distribution 的 Package Manager 安裝方法。
+#+BEGIN_SRC sh
+  pacman -S emacs          # Archlinux
+  apt-get install emacs    # Ubuntu
+  yum install emacs        # Fedora
+#+END_SRC
+
+** Install org and org-octopress
+用 Emacs 裡的 Package Manager 安裝：
+#+BEGIN_SRC sh
+  # 在家目錄建一個 .emacs.d 資料夾後，在裡面建 init.el
+  mkdir ~/.emacs.d
+  touch ~/.emacs.d/init.el
+#+END_SRC
+
+在 init.el 添加：
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'package-archives
+    '("marmalade" . "http://marmalade-repo.org/packages/"))
+
+  (add-to-list 'package-archives
+    '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+  (package-initialize)
+#+END_SRC
+
+開啟 Emacs 鍵入 =M-x package-install org RET= ，把 org 換成 org-octopress 後安裝。
+
+** Org-octopress Setup
+以下是從 [[https://github.com/yoshinari-nomura/org-octopress][org-octopress]] 的 README 裡擷取 Basic Settings 的片段。
+
+添加在 init.el。
++ Emacs Settings:
+#+BEGIN_SRC emacs-lisp
+  (require 'org-octopress)
+  (setq org-octopress-directory-top       "~/octopress/source")
+  (setq org-octopress-directory-posts     "~/octopress/source/_posts")
+  (setq org-octopress-directory-org-top   "~/octopress/source")
+  (setq org-octopress-directory-org-posts "~/octopress/source/blog")
+  (setq org-octopress-setup-file          "~/org-sty/setupfile.org")
+#+END_SRC
+
++ Octopress Settings:
+In octopress/_config.yml, you must set the permelink attribute: \\
+=permalink: /blog/:year-:month-:day-:title.html=
+
+* Octopress
+[[http://octopress.org/][Octopress]] 是一套 Blog 的框架，所以一開始你的 Blog 就有一個好看的外觀基礎，功能上
+有支援 Twitter, Facebook, Delicious 等等，也可以用來產生靜態 Blog 後放在 Github
+上，預設是用 Markdown 來撰寫文章。
+
+** Install and Use Octopress
+要先安裝 [[http://www.ruby-lang.org/en/][Ruby]] 和 [[http://gitscm.com/][Git]]。
+官方的方法： [[http://octopress.org/docs/setup/][Octopress Setup]]
+
+* Github
+
+首先有個 [[https://github.com/][Github]] 的帳號後，建立一個 Repository 為 username.github.io，之後
+去你的 octopress 的根目錄鍵入 =bundle exec rake setup_github_page= 輸入剛剛建完
+給你的 url。
+
+官方文檔: [[https://help.github.com/][GithubHelp]]
+
+* 基本流程
+1. 開啟 Emacs 鍵入 =M-x org-octopress RET= ，會到 org-octopress 的界面鍵入 =w=
+   和標題，開始撰寫文章。
+2. 寫完後，鍵入 =C-c C-e P x octopress=
+3. 在你的 octopress 根目錄鍵入 =bundle exec rake gen_deploy=
+4. 還有 source 也要 push 上去 =git push -u origin source=
+
+文章打到一半或要做確認的時候用 =bundle exec rake preview= ，之後在
+http://localhost:4000/ 可以看你的 Blog。
+
+順帶一提要 push 兩次還真累，還在找辦法解決。
