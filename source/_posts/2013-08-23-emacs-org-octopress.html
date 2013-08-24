@@ -178,7 +178,7 @@ In octopress/_config.yml, you must set the permelink attribute: <br/>
 <li>開啟 Emacs 鍵入 <code>M-x org-octopress RET</code> ，會到 org-octopress 的界面鍵入 <code>w</code>
 和標題，開始撰寫文章。
 </li>
-<li>寫完後，鍵入 <code>C-c C-e P x octopress</code>
+<li>寫完後，鍵入 <code>C-c C-e P x octopress</code> 來生成靜態網頁
 </li>
 <li>在你的 octopress 根目錄鍵入 <code>bundle exec rake gen_deploy</code>
 </li>
@@ -187,7 +187,7 @@ In octopress/_config.yml, you must set the permelink attribute: <br/>
 </ol>
 
 <p>
-文章打到一半或要做確認的時候用 <code>bundle exec rake preview</code> ，之後在
+文章打到一半或要做確認的時候用(需先生成靜態網頁) <code>bundle exec rake preview</code> ，之後在
 <a href="http://localhost:4000/">http://localhost:4000/</a> 可以看你的 Blog。
 </p>
 </div>

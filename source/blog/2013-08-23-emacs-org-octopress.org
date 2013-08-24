@@ -100,9 +100,9 @@ In octopress/_config.yml, you must set the permelink attribute: \\
 * 基本流程
 1. 開啟 Emacs 鍵入 =M-x org-octopress RET= ，會到 org-octopress 的界面鍵入 =w=
    和標題，開始撰寫文章。
-2. 寫完後，鍵入 =C-c C-e P x octopress=
+2. 寫完後，鍵入 =C-c C-e P x octopress= 來生成靜態網頁
 3. 在你的 octopress 根目錄鍵入 =bundle exec rake gen_deploy=
 4. 也可以把 source branch 下 push 上去做版本管理 =git push -u origin source=
 
-文章打到一半或要做確認的時候用 =bundle exec rake preview= ，之後在
+文章打到一半或要做確認的時候用(需先生成靜態網頁) =bundle exec rake preview= ，之後在
 http://localhost:4000/ 可以看你的 Blog。
