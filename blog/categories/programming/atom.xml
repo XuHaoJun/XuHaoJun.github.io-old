@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-25T21:35:16+08:00</updated>
+  <updated>2013-08-25T21:38:42+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -145,7 +145,7 @@ Set implements a collection of unordered values with no duplicates.
 
 
 <p>
-看來以後可以玩玩看交集、聯集、插集之類的，還有子集合判斷之類的。
+看來以後可以玩玩看交集、聯集、差集之類的，還有子集合判斷之類的。
 </p>
 </div>
 </div>
