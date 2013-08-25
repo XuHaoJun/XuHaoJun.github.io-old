@@ -4,7 +4,7 @@
   <title><![CDATA[XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-25T06:12:15+08:00</updated>
+  <updated>2013-08-25T20:36:50+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -12,6 +12,248 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[產生一組不重複整數的集合(Ruby)]]></title>
+    <link href="http://XuHaoJun.github.io/blog/2013-08-25-gen-uniq-nums-ruby.html"/>
+    <updated>2013-08-25T00:00:00+08:00</updated>
+    <id>http://XuHaoJun.github.io/blog/gen-uniq-nums-ruby</id>
+    <content type="html"><![CDATA[<p>
+先用 Ruby 寫以前上 Android 中猜數字範例中用到的算法：
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Normal Way - 1</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">get_uniq_nums</span>(size, range)
+  ary = []
+  <span style="color: #859900; font-weight: bold;">begin</span>
+    r = rand(range)
+    <span style="color: #859900; font-weight: bold;">if</span> ary.member?(r)
+      <span style="color: #859900; font-weight: bold;">next</span>
+    <span style="color: #859900; font-weight: bold;">else</span>
+      ary &lt;&lt; r
+    <span style="color: #859900; font-weight: bold;">end</span>
+  <span style="color: #859900; font-weight: bold;">end</span> <span style="color: #859900; font-weight: bold;">while</span>( ary.length &lt; size )
+  <span style="color: #859900; font-weight: bold;">return</span> ary
+<span style="color: #859900; font-weight: bold;">end</span>
+</pre>
+</div>
+
+<p>
+<!-- more -->
+</p>
+
+<p>
+記得之前教的不是用 member 的方法來判斷，當初沒有提到用到集合的概念寫，好像是檢查前面幾個數字的迴圈吧，那陀 Java 程式碼已經忘光了。
+</p>
+
+<p>
+這是產生 4 個不重複 1~9 的數字，放在一個陣列裡面
+= get_uniq_nums(4, (1&#x2026;10)) =
+</p>
+
+<p>
+變成一個數字，先 join 把他連在一起變成字串，在轉回數字。
+= get_uniq_nums(4, (1&#x2026;10)).join.to_i =
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Normal way - 2</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">get_uniq_nums</span>(size, range, ary = [])
+  <span style="color: #859900; font-weight: bold;">if</span> size.zero?
+    ary
+  <span style="color: #859900; font-weight: bold;">elsif</span> ary.member?(r = rand(range))
+    get_uniq_nums(size , range, ary)
+  <span style="color: #859900; font-weight: bold;">else</span>
+    get_uniq_nums(size - 1, range, (ary &lt;&lt; r))
+  <span style="color: #859900; font-weight: bold;">end</span>
+<span style="color: #859900; font-weight: bold;">end</span>
+</pre>
+</div>
+<p>
+試了別種寫法，很像叫尾遞迴的方法，跟普通遞迴好像差別在多用一個參數在存值，在
+Emacs lisp 很像還要多用一個函數才能不影響原來的接口。順便一提，弄不出一個函數的普通遞迴方法。
+</p>
+
+<p>
+以下是普通遞迴版失敗品：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">get_uniq_nums</span>(size, range)
+  <span style="color: #859900; font-weight: bold;">if</span> size.zero?
+    []
+  <span style="color: #859900; font-weight: bold;">elsif</span> get_uniq_nums(size, range).member?(r = rand(range))
+    get_uniq_nums(size, range)
+  <span style="color: #859900; font-weight: bold;">else</span>
+    get_uniq_nums(size - 1, range) &lt;&lt; r
+  <span style="color: #859900; font-weight: bold;">end</span>
+<span style="color: #859900; font-weight: bold;">end</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Set Way</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+放狗一搜，找到了其他方法：
+</p>
+<ul class="org-ul">
+<li><a href="http://stackoverflow.com/questions/119107/how-do-i-generate-a-list-of-n-unique-random-numbers-in-ruby">How do I generate a list of n unique random numbers in Ruby?</a>
+</li>
+</ul>
+
+<blockquote>
+<p>
+Set implements a collection of unordered values with no duplicates.
+</p>
+</blockquote>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">require <span style="color: #2aa198;">'set'</span>
+
+<span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">rand_n</span>(n, max)
+  randoms = <span style="color: #b58900;">Set</span>.new
+  loop <span style="color: #859900; font-weight: bold;">do</span>
+    randoms &lt;&lt; rand(max)
+    <span style="color: #859900; font-weight: bold;">return</span> randoms.to_a <span style="color: #859900; font-weight: bold;">if</span> randoms.size &gt;= n
+  <span style="color: #859900; font-weight: bold;">end</span>
+<span style="color: #859900; font-weight: bold;">end</span>
+</pre>
+</div>
+
+<p>
+好吧&#x2026;原來 Ruby 內建了 Set 的資料型態，第一次發現有內建集合的程式語言，當初應該要想到 Java 中有沒有這東西。 上面是用集合內不重複元素的特性，所以在加入元素時天生就會檢查有沒有重複，最後在轉成陣列。
+</p>
+
+
+<p>
+順便一提，看來以後可以玩玩看交集、聯集、插集之類的，還有子集合判斷之類的。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Range Way - 2</h2>
+<div class="outline-text-2" id="text-4">
+<blockquote>
+<p>
+A Range represents an interval&#x2014;a set of values with a beginning and
+an end.
+</p>
+</blockquote>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">range = 0...1000000
+how_many = 10000
+
+<span style="color: #586e75;"># </span><span style="color: #586e75;">first way</span>
+<span style="color: #586e75;"># </span><span style="color: #586e75;">Array::sample Choose a random element or n random elements from the array.</span>
+range.to_a.sample(how_many)
+
+<span style="color: #586e75;"># </span><span style="color: #586e75;">second way</span>
+(range).sort_by{rand}[0...how_many]
+</pre>
+</div>
+
+<p>
+直接從 Range 裡用內建的方法隨機挑，行數完敗上面那兩個。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Range way - 2</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+突然想到如果要在生成時就篩選掉不想要數字的話，要怎麼做？
+</p>
+
+<p>
+仔細一想很簡單，直接在參數裡改就好了。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #586e75;"># </span><span style="color: #586e75;">Delete 2 from the range of rand</span>
+get_uniq_nums(3, (1..4).reject { |x| x==2 })
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Benchmark them</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1">Part 1</h3>
+<div class="outline-text-3" id="text-6-1">
+<div class="org-src-container">
+
+<pre class="src src-ruby">require <span style="color: #2aa198;">'benchmark'</span>
+
+range = 0...1000000
+how_many = 10000
+
+<span style="color: #586e75;">## </span><span style="color: #586e75;">Range way - 1</span>
+<span style="color: #b58900;">Benchmark</span>.realtime <span style="color: #859900; font-weight: bold;">do</span>
+  range.to_a.sample(how_many)
+<span style="color: #859900; font-weight: bold;">end</span>
+<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; 0.076334817</span>
+
+<span style="color: #b58900;">Benchmark</span>.realtime <span style="color: #859900; font-weight: bold;">do</span>
+  rand_n(how_many, range)
+<span style="color: #859900; font-weight: bold;">end</span>
+<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; 0.01060032</span>
+
+<span style="color: #586e75;">## </span><span style="color: #586e75;">Normal way - 1</span>
+<span style="color: #b58900;">Benchmark</span>.realtime <span style="color: #859900; font-weight: bold;">do</span>
+  get_uniq_nums(how_many, range)
+<span style="color: #859900; font-weight: bold;">end</span>
+<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; 3.565261117</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2">Part 2</h3>
+<div class="outline-text-3" id="text-6-2">
+<div class="org-src-container">
+
+<pre class="src src-ruby">range = 0...1000000
+how_many = 1000000
+
+<span style="color: #586e75;">## </span><span style="color: #586e75;">Set Way</span>
+<span style="color: #b58900;">Benchmark</span>.realtime <span style="color: #859900; font-weight: bold;">do</span>
+  rand_n(how_many, range)
+<span style="color: #859900; font-weight: bold;">end</span>
+<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; 11.305328646</span>
+
+<span style="color: #586e75;">## </span><span style="color: #586e75;">Range way - 1</span>
+<span style="color: #b58900;">Benchmark</span>.realtime <span style="color: #859900; font-weight: bold;">do</span>
+  range.to_a.sample(how_many)
+<span style="color: #859900; font-weight: bold;">end</span>
+<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; 0.112987391</span>
+</pre>
+</div>
+
+<p>
+Range Way 完敗。 還有沒有實現 Set Way 和 Normal Way 的篩選的功能。
+</p>
+</div>
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Org-mode + Octopress + Github 來搭建 Blog]]></title>
