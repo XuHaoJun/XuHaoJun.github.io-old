@@ -4,7 +4,7 @@
   <title><![CDATA[XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-25T20:39:07+08:00</updated>
+  <updated>2013-08-25T20:41:17+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -51,13 +51,13 @@
 </p>
 
 <p>
-這是產生 4 個不重複 1~9 的數字，放在一個陣列裡面
-<code>get_uniq_nums(4, (1...10))</code>
+這是產生 4 個不重複 1~9 的數字，放在一個陣列裡面 <br/>
+<code>get_uniq_nums(4, (1...10))</code> <br/>
 </p>
 
 <p>
-變成一個數字，先 join 把他連在一起變成字串，在轉回數字。
-<code>get_uniq_nums(4, (1...10)).join.to_i</code>
+變成一個數字，先 join 把他連在一起變成字串，在轉回數字。 <br/>
+<code>get_uniq_nums(4, (1...10)).join.to_i</code> <br/>
 </p>
 </div>
 </div>
