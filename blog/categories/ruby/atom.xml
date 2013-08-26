@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-26T19:21:15+08:00</updated>
+  <updated>2013-08-26T19:35:12+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -18,8 +18,30 @@
     <link href="http://XuHaoJun.github.io/blog/2013-08-25-gen-uniq-nums-ruby.html"/>
     <updated>2013-08-25T00:00:00+08:00</updated>
     <id>http://XuHaoJun.github.io/blog/gen-uniq-nums-ruby</id>
-    <content type="html"><![CDATA[<p>
+    <content type="html"><![CDATA[<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Normal Way - 1</a></li>
+<li><a href="#sec-2">Normal way - 2</a></li>
+<li><a href="#sec-3">Set Way</a></li>
+<li><a href="#sec-4">Range Way - 2</a></li>
+<li><a href="#sec-5">Range way - 2</a></li>
+<li><a href="#sec-6">Benchmark them</a></li>
+</ul>
+</div>
+</div>
+
+
+<p>
 先用 Ruby 寫以前上 Android 中猜數字範例中用到的算法：
+</p>
+
+
+
+
+<p>
+<!-- more -->
 </p>
 
 
@@ -44,10 +66,6 @@
 <span style="color: #859900; font-weight: bold;">end</span>
 </pre>
 </div>
-
-<p>
-<!-- more -->
-</p>
 
 <p>
 記得之前教的不是用 member 的方法來判斷，當初沒有提到用到集合的概念寫，好像是檢查前面幾個數字的迴圈吧，那陀 Java 程式碼已經忘光了。
