@@ -5,9 +5,13 @@
 #+JEKYLL_CATEGORIES: ruby programming
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
+#+OPTIONS: toc:1
+#+STYLE: <style type="text/css">#table-of-contents{ max-width:100%; }</style>
 
 
 先用 Ruby 寫以前上 Android 中猜數字範例中用到的算法：
+
+{{{more}}}
 
 * Normal Way - 1
 #+BEGIN_SRC ruby
@@ -24,8 +28,6 @@
     return ary
   end
 #+END_SRC
-
-{{{more}}}
 
 記得之前教的不是用 member 的方法來判斷，當初沒有提到用到集合的概念寫，好
 像是檢查前面幾個數字的迴圈吧，那陀 Java 程式碼已經忘光了。
