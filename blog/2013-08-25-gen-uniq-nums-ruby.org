@@ -138,6 +138,7 @@ an end.
   end
   # => 0.076334817
 
+  ## Set Way
   Benchmark.realtime do
     rand_n(how_many, range)
   end

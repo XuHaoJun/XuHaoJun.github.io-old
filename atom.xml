@@ -4,7 +4,7 @@
   <title><![CDATA[XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-25T21:38:42+08:00</updated>
+  <updated>2013-08-26T15:29:18+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -209,6 +209,7 @@ how_many = 10000
 <span style="color: #859900; font-weight: bold;">end</span>
 <span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; 0.076334817</span>
 
+<span style="color: #586e75;">## </span><span style="color: #586e75;">Set Way</span>
 <span style="color: #b58900;">Benchmark</span>.realtime <span style="color: #859900; font-weight: bold;">do</span>
   rand_n(how_many, range)
 <span style="color: #859900; font-weight: bold;">end</span>
