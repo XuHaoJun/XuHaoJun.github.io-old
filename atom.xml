@@ -4,7 +4,7 @@
   <title><![CDATA[XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-26T19:36:38+08:00</updated>
+  <updated>2013-08-26T23:25:17+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -279,8 +279,6 @@ Range Way 完敗。 還有沒有實現 Set Way 和 Normal Way 的篩選的功能
 <ul class="org-ul">
 <li>免費網域、免費託管、免費流量
 </li>
-<li>絕對管理權
-</li>
 <li>版本管理，不用擔心備份！
 </li>
 <li>Org-mode or Markdown 撰寫效率好
@@ -290,7 +288,9 @@ Range Way 完敗。 還有沒有實現 Set Way 和 Normal Way 的篩選的功能
 <li>缺點
 <ul class="org-ul">
 <li>技術門檻要求較高 <br/>
-   需要懂一些 Git, Github, Org-mode 或 Makrdown，更進階要客製化 Blog 的話，可能還要懂些許 Ruby (jekyll)
+    需要懂一些 Git, Github, Org-mode 或 Makrdown，更進階要客製化 Blog 的話，可能還要懂些許 Ruby (jekyll)
+</li>
+<li>Org-mode 的 code block 沒有 markdown&#8217;s code block 的 title url 功能。
 </li>
 </ul>
 </li>
