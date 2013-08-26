@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-27T06:34:05+08:00</updated>
+  <updated>2013-08-27T06:38:42+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -72,11 +72,15 @@
 (100...1000).select{ |x| x.armstrong_num? }
 <span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [153, 370, 371, 407]</span>
 
+<span style="color: #586e75;"># </span><span style="color: #586e75;">&#22235;&#20301;&#25976;&#30340;&#31532;&#19968;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
+(1000...10000).select{ |x| x.armstrong_num? }.first(1)
+<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [1634]</span>
+
 <span style="color: #586e75;"># </span><span style="color: #586e75;">&#21069; 15 &#20491;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
 (1..<span style="color: #b58900;">Float</span>::<span style="color: #b58900;">INFINITY</span>).lazy.select{ |x| x.armstrong_num? }.first(15)
 <span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208]</span>
 
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#21069;&#19977;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;&#65292;&#24478;&#19977;&#20301;&#25976;&#24460;&#19981;&#21253;&#21547;&#19977;&#20301;&#25976;</span>
+<span style="color: #586e75;"># </span><span style="color: #586e75;">&#21069;&#19977;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;&#65292;&#24478;&#19977;&#20301;&#25976;&#38283;&#22987;</span>
 (100..<span style="color: #b58900;">Float</span>::<span style="color: #b58900;">INFINITY</span>).lazy.select{ |x| x.armstrong_num? }.first(3)
 <span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [153, 370, 371]</span>
 </pre>

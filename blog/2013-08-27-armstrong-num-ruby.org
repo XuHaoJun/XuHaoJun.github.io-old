@@ -27,24 +27,28 @@ $407 = 4^3 + 0^3 + 7^3$
 也懶的想怎麼做優化了，怕到時候改一改可讀性就沒現在這個好了，先留這個作筆記。
 
 #+BEGIN_SRC ruby
-  class Integer
-    def armstrong_num?
-      sum = 0
-      digits = self.to_s.length
-      digits.times { |n| sum += (self.to_s[n].to_i ** digits) }
-      return sum == self
+    class Integer
+      def armstrong_num?
+        sum = 0
+        digits = self.to_s.length
+        digits.times { |n| sum += (self.to_s[n].to_i ** digits) }
+        return sum == self
+      end
     end
-  end
 
-  # 三位數的所有阿姆斯壯數
-  (100...1000).select{ |x| x.armstrong_num? }
-  # => [153, 370, 371, 407]
+    # 三位數的所有阿姆斯壯數
+    (100...1000).select{ |x| x.armstrong_num? }
+    # => [153, 370, 371, 407]
 
-  # 前 15 個阿姆斯壯數
-  (1..Float::INFINITY).lazy.select{ |x| x.armstrong_num? }.first(15)
-  # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208]
+    # 四位數的第一個阿姆斯壯數
+    (1000...10000).select{ |x| x.armstrong_num? }.first(1)
+    # => [1634]
 
-  # 前三個阿姆斯壯數，從三位數後不包含三位數
-  (100..Float::INFINITY).lazy.select{ |x| x.armstrong_num? }.first(3)
-  # => [153, 370, 371]
+    # 前 15 個阿姆斯壯數
+    (1..Float::INFINITY).lazy.select{ |x| x.armstrong_num? }.first(15)
+    # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208]
+
+    # 前三個阿姆斯壯數，從三位數開始
+    (100..Float::INFINITY).lazy.select{ |x| x.armstrong_num? }.first(3)
+    # => [153, 370, 371]
 #+END_SRC
