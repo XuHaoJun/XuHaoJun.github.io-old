@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-08-27T06:38:42+08:00</updated>
+  <updated>2013-08-27T06:51:29+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -20,7 +20,6 @@
     <id>http://XuHaoJun.github.io/blog/armstrong-num-ruby</id>
     <content type="html"><![CDATA[<p>
 寫一些簡單的演算法來熟悉 Ruby。
-<!-- more -->
 </p>
 
 
@@ -37,6 +36,7 @@
 
 <p>
 例如 153、370、371 及 407 就是三位數的水仙花数，其各个数之立方和等于该数： <br/>
+<!-- more -->
 <img src="ltxpng/2013-08-27-armstrong-num-ruby_e141c033bb0e669b266fc28f8d36f2011481ba63.png"  alt="$153 = 1^3 + 5^3 + 3^3$"/> <br/>
 <img src="ltxpng/2013-08-27-armstrong-num-ruby_9eb5ee3740baed1f5a29bcd886e4d39db8abae6f.png"  alt="$370 = 3^3 + 7^3 + 0^3$"/> <br/>
 <img src="ltxpng/2013-08-27-armstrong-num-ruby_06e1db69575b29de5a03efa3759af10c7e7d8c4c.png"  alt="$371 = 3^3 + 7^3 + 1^3$"/> <br/>
@@ -53,14 +53,20 @@
 <div class="outline-text-2" id="text-2">
 <p>
 不曉得型別轉來轉去算不算壞習慣&#x2026;。 <br/>
+</p>
+
+<p>
 有用到 lazy 這個 enumerator，如果沒用 lazy 的話就會當在那裡了，lazy 感覺很像是一個一個求值後在判斷在存值，沒有使用的話則一次全部求值後在做事。 <br/>
-也懶的想怎麼做優化了，怕到時候改一改可讀性就沒現在這個好了，先留這個作筆記。
+</p>
+
+<p>
+懶的想怎麼做優化了，怕到時候改一改可讀性就沒現在這個好了，先留這個作筆記。
 </p>
 
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Integer</span>
-  <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">armstrong_num?</span>
+  <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">armstrong_num?</span> <span style="color: #586e75;"># </span><span style="color: #586e75;">may be have more better name..</span>
     sum = 0
     digits = <span style="color: #268bd2;">self</span>.to_s.length
     digits.times { |n| sum += (<span style="color: #268bd2;">self</span>.to_s[n].to_i ** digits) }
