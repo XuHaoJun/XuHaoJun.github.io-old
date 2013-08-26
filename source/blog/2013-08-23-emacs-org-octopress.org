@@ -7,14 +7,14 @@
 #+JEKYLL_COMMENTS: true
 
 - 優點
- + 免費網域、免費託管、免費流量
- + 絕對管理權
- + 版本管理，不用擔心備份！
- + Org-mode or Markdown 撰寫效率好
+  + 免費網域、免費託管、免費流量
+  + 版本管理，不用擔心備份！
+  + Org-mode or Markdown 撰寫效率好
 - 缺點
- + 技術門檻要求較高 \\
-   需要懂一些 Git, Github, Org-mode 或 Makrdown，更進階要客製化 Blog 的話，可能還要
-   懂些許 Ruby (jekyll)
+  + 技術門檻要求較高 \\
+    需要懂一些 Git, Github, Org-mode 或 Makrdown，更進階要客製化 Blog 的話，可能還要
+    懂些許 Ruby (jekyll)
+  + Org-mode 的 code block 沒有 markdown's code block 的 title url 功能。
 
 {{{more}}}
 
