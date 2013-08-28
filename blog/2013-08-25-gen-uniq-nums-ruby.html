@@ -12,7 +12,7 @@
   <meta name="description" content="Table of Contents Normal Way - 1
 Normal Way - 2
 Set Way
-Range Way - 2
+Range Way - 1
 Range Way - 2
 Benchmark them 先用 Ruby 寫以前上 Android 中猜數字範例中用到的算法： Normal Way - 1 &hellip;">
   
@@ -103,7 +103,7 @@ Benchmark them 先用 Ruby 寫以前上 Android 中猜數字範例中用到的�
 <li><a href="#sec-1">Normal Way - 1</a></li>
 <li><a href="#sec-2">Normal Way - 2</a></li>
 <li><a href="#sec-3">Set Way</a></li>
-<li><a href="#sec-4">Range Way - 2</a></li>
+<li><a href="#sec-4">Range Way - 1</a></li>
 <li><a href="#sec-5">Range Way - 2</a></li>
 <li><a href="#sec-6">Benchmark them</a></li>
 </ul>
@@ -234,7 +234,7 @@ Set implements a collection of unordered values with no duplicates.
 </div>
 </div>
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Range Way - 2</h2>
+<h2 id="sec-4">Range Way - 1</h2>
 <div class="outline-text-2" id="text-4">
 <blockquote>
 <p>
@@ -270,13 +270,13 @@ range.to_a.sample(how_many)
 </p>
 
 <p>
-仔細一想很簡單，直接在參數裡改就好了。
+仔細一想很簡單，直接在在範圍裡改。
 </p>
 
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #586e75;"># </span><span style="color: #586e75;">Delete 2 from the range of rand</span>
-get_uniq_nums(3, (1..4).reject { |x| x==2 })
+(1..4).reject { |x| x==2 }.to_a.sample(how_many)
 </pre>
 </div>
 </div>

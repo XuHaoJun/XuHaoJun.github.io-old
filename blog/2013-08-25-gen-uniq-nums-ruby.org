@@ -95,7 +95,7 @@ Set implements a collection of unordered values with no duplicates.
 
 看來以後可以玩玩看交集、聯集、差集之類的，還有子集合判斷之類的。
 
-* Range Way - 2
+* Range Way - 1
 #+BEGIN_QUOTE
 A Range represents an interval---a set of values with a beginning and
 an end.
@@ -118,11 +118,11 @@ an end.
 * Range Way - 2
 突然想到如果要在生成時就篩選掉不想要數字的話，要怎麼做？
 
-仔細一想很簡單，直接在參數裡改就好了。
+仔細一想很簡單，直接在在範圍裡改。
 
 #+BEGIN_SRC ruby
   # Delete 2 from the range of rand
-  get_uniq_nums(3, (1..4).reject { |x| x==2 })
+  (1..4).reject { |x| x==2 }.to_a.sample(how_many)
 #+END_SRC
 
 * Benchmark them
