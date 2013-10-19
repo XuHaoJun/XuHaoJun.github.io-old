@@ -1,0 +1,12 @@
+#+TITLE: Ruby block match and jump (emacs)
+#+DATE: 2013-10-19
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: ruby emacs evil-mode
+#+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
+
+* Example
+[[./img/evil-ruby-jump-item.gif]]
+
+{{{more}}}
