@@ -1,4 +1,4 @@
-#+TITLE: Ruby block match and jump (emacs)
+#+TITLE: Ruby block match and jump (emacs evil-mode)
 #+DATE: 2013-10-19
 #+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
 #+JEKYLL_LAYOUT: post
@@ -6,7 +6,30 @@
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
 
+* Description
+Emacs evil-mode =%= 功能加上 Ruby block 的配對，例如將光標放在 =class Foo= 上後
+鍵入 =%= 可以跳轉至相符的 =end= 。
+
+{{{more}}}
 * Example
 [[./img/evil-ruby-jump-item.gif]]
 
-{{{more}}}
+
+* Source Code
+#+BEGIN_SRC emacs-lisp
+  ;; Require package: (evil)
+  (evil-define-motion evil-ruby-jump-item (count)
+    :jump t
+    :type inclusive
+    (cond ((string-match ruby-block-beg-re (current-word))
+           (ruby-end-of-block count))
+          ((string-match ruby-block-end-re (current-word))
+           (ruby-beginning-of-block count))
+          (t
+           (evil-jump-item count))))
+
+  (add-hook 'ruby-mode-hook
+            (lambda ()
+              (define-key evil-normal-state-local-map "%" 'evil-ruby-jump-item)
+              (define-key evil-motion-state-local-map "%" 'evil-ruby-jump-item)))
+#+END_SRC
