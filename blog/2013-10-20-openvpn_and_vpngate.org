@@ -1,4 +1,4 @@
-#+TITLE: Openvpen + Vpn Gate + Ruby script
+#+TITLE: Openvpn + Vpn Gate + Ruby script
 #+DATE: 2013-10-20
 #+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
 #+JEKYLL_LAYOUT: post
