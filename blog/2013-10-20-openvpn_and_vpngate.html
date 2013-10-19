@@ -5,15 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Emacs 自動縮進 Ruby's if-else - XuBlog</title>
+  <title>Openvpen + Vpn Gate + Ruby script - XuBlog</title>
   <meta name="author" content="XuHaoJun">
 
   
-  <meta name="description" content="Problem 當我打完 elsif 時，他應該要縮進到 if 那邊。 if elsif # Should indent this line
-end 正確的 if-else 縮進： if 1&gt;2 ....
-elsif ...
-else ...
-end 很明顯 else 和 elsif 是向 &hellip;">
+  <meta name="description" content="寫了個連去 vpngate 用的小腳本，不然每次得去官網手動下載設定檔太麻煩了。 預設是連質量最高的 Server，也只能連這個，以後看需求重寫吧，這小腳本質量低到寫完後就可以丟了。 Source #!/usr/bin/env ruby
+### 1. Download(curl) vpngate &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +19,7 @@ end 很明顯 else 和 elsif 是向 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://XuHaoJun.github.io/blog/2013-08-29-emacs-ruby-if-else-intdent.html">
+  <link rel="canonical" href="http://XuHaoJun.github.io/blog/2013-10-20-openvpn_and_vpngate.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="XuBlog" type="application/atom+xml">
@@ -70,7 +67,7 @@ end 很明顯 else 和 elsif 是向 &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Emacs 自動縮進 Ruby's If-else</h1>
+      <h1 class="entry-title">Openvpen + Vpn Gate + Ruby Script</h1>
     
     
       <p class="meta">
@@ -86,7 +83,7 @@ end 很明顯 else 和 elsif 是向 &hellip;">
   
 
 
-<time datetime="2013-08-29T00:00:00+08:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
+<time datetime="2013-10-20T00:00:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,88 +92,64 @@ end 很明顯 else 和 elsif 是向 &hellip;">
   </header>
 
 
-<div class="entry-content"><div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Problem</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-當我打完 elsif 時，他應該要縮進到 if 那邊。
+<div class="entry-content"><p>
+寫了個連去 vpngate 用的小腳本，不然每次得去官網手動下載設定檔太麻煩了。
 </p>
-<div class="org-src-container">
-
-<pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">if</span>
-   <span style="color: #859900; font-weight: bold;">elsif</span> <span style="color: #586e75;"># </span><span style="color: #586e75;">Should indent this line</span>
-<span style="color: #859900; font-weight: bold;">end</span>
-</pre>
-</div>
 
 <p>
+預設是連質量最高的 Server，也只能連這個，以後看需求重寫吧，這小腳本質量低到寫完後就可以丟了。
 <!-- more -->
 </p>
-
-<p>
-正確的 if-else 縮進：
-</p>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Source</h2>
+<div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 
-<pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">if</span> 1&gt;2
-  ....
-<span style="color: #859900; font-weight: bold;">elsif</span>
-  ...
+<pre class="src src-ruby"><span style="color: #586e75;">#</span><span style="color: #586e75;">!/usr/bin/env ruby</span>
+<span style="color: #586e75;">### </span><span style="color: #586e75;">1. Download(curl) vpngate csv from offical site</span>
+<span style="color: #586e75;">### </span><span style="color: #586e75;">2. Convert csv to ruby array</span>
+<span style="color: #586e75;">### </span><span style="color: #586e75;">3. Decode openvpn config by base64</span>
+<span style="color: #586e75;">### </span><span style="color: #586e75;">4. Run command openvpn and use the highest score server config file</span>
+
+require <span style="color: #2aa198;">'csv'</span>
+require <span style="color: #2aa198;">'base64'</span>
+require <span style="color: #2aa198;">'tempfile'</span>
+
+<span style="color: #586e75;">### </span><span style="color: #586e75;">1.</span>
+vpngate_csv_url = <span style="color: #2aa198;">"http://www.vpngate.net/api/iphone/"</span>
+puts <span style="color: #2aa198;">"==&gt; Downloading vpngate csv from</span><span style="color: #268bd2;"> #{vpngate_csv_url}</span><span style="color: #2aa198;">"</span>
+vpngate_ori_csv = <span style="color: #2aa198;">`curl</span><span style="color: #268bd2;"> #{vpngate_csv_url}</span><span style="color: #2aa198;">`</span>
+<span style="color: #859900; font-weight: bold;">if</span> <span style="color: #859900; font-weight: bold;">not</span> vpngate_ori_csv.empty?
+  puts <span style="color: #2aa198;">"==&gt; Successfully download"</span>
 <span style="color: #859900; font-weight: bold;">else</span>
-  ...
+  puts <span style="color: #2aa198;">"==&gt; Fail to download vpngate csv"</span>
 <span style="color: #859900; font-weight: bold;">end</span>
-</pre>
-</div>
 
-<p>
-很明顯 else 和 elsif 是向 if 對齊縮進的。
-</p>
-</div>
-</div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Solution</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-發現在 Emacs 上沒有自動縮進 Ruby 的 if-else 語法後，去試了一下 vim 發現可以處理 if-else
-的縮進，當然得跟上！
-</p>
+<span style="color: #586e75;">### </span><span style="color: #586e75;">2.</span>
+vg_rb_csv = <span style="color: #b58900;">CSV</span>.parse(vpngate_ori_csv)
+<span style="color: #586e75;"># </span><span style="color: #586e75;">vg_rb_csv[1]</span>
+<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; ["#HostName", "IP", "Score", "Ping", "Speed", "CountryLong", "CountryShort",</span>
+<span style="color: #586e75;">#     </span><span style="color: #586e75;">"NumVpnSessions", "Uptime", "TotalUsers", "TotalTraffic", "LogType", "Operator",</span>
+<span style="color: #586e75;">#     </span><span style="color: #586e75;">"Message", "OpenVPN_ConfigData_Base64"]</span>
 
-<p>
-最簡單的方法就是在按 <code>space</code> 時，檢查前一個 word 是不是 <code>else</code> 或 <code>elsif</code> 。
-</p>
+<span style="color: #586e75;">### </span><span style="color: #586e75;">3.</span>
+openvpn_config = <span style="color: #b58900;">Base64</span>.decode64 vg_rb_csv[2][-1] <span style="color: #586e75;"># </span><span style="color: #586e75;">vg_rb_csv[2] is the first server csv data</span>
 
-<p>
-首先我有用 ruby-electric，這東西會在你打 <code>if</code> 或 <code>class</code> 等等 自動產生一個 <code>end</code>
-在下行，他是依據你打 <code>if&lt;space&gt;</code> 的 <code>&lt;space&gt;</code> 時會觸發產生一個 <code>end</code> 。
-</p>
+<span style="color: #586e75;">### </span><span style="color: #586e75;">4.</span>
+openvpn_config_file = <span style="color: #b58900;">Tempfile</span>.new(vg_rb_csv[2][0])
+openvpn_config_file.write(openvpn_config)
+<span style="color: #859900; font-weight: bold;">begin</span>
+  puts <span style="color: #2aa198;">"========================================================================"</span>
+  puts <span style="color: #2aa198;">"==&gt; Use the highest score server"</span>
+  puts <span style="color: #2aa198;">"==&gt; Server info: IP</span><span style="color: #268bd2;">:#{vg_rb_csv[2][1]}</span><span style="color: #2aa198;"> Country</span><span style="color: #268bd2;">:#{vg_rb_csv[2][5]}</span><span style="color: #2aa198;"> Score</span><span style="color: #268bd2;">:#{vg_rb_csv[2][2]}</span><span style="color: #2aa198;">"</span>
 
-<p>
-<code>&lt;space&gt;</code> 對應到 ruby-electric-space 這個 funciton，我從 ruby-electric 裡複製過來，很像不應該這樣做，不過不管了。
-</p>
-
-<p>
-以下是修改過後的版本：
-</p>
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">(<span style="color: #859900; font-weight: bold;">defun</span> <span style="color: #268bd2;">ruby-electric-space</span> (arg)
-  (interactive <span style="color: #2aa198;">"P"</span>)
-  (self-insert-command (prefix-numeric-value arg))
-  (<span style="color: #859900; font-weight: bold;">cond</span> ((ruby-electric-space-can-be-expanded-p)
-         (<span style="color: #859900; font-weight: bold;">save-excursion</span>
-           (ruby-indent-line t)
-           (newline)
-           (ruby-electric-insert-end)))
-        ((ruby-electric-space-can-be-indent-p) (ruby-indent-line t))))
-
-(<span style="color: #859900; font-weight: bold;">defun</span> <span style="color: #268bd2;">ruby-electric-space-can-be-indent-p</span> ()
-  (and (ruby-electric-code-at-point-p)
-       (ruby-electric-matching-word-p)))
-
-(<span style="color: #859900; font-weight: bold;">defun</span> <span style="color: #268bd2;">ruby-electric-matching-word-p</span> ()
-  (<span style="color: #859900; font-weight: bold;">save-excursion</span>
-    (backward-word)
-    (string-match <span style="color: #2aa198;">"</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">(</span><span style="color: #2aa198;">\\&lt;else\\&gt;</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">|</span><span style="color: #2aa198;">\\&lt;elsif\\&gt;</span><span style="color: #859900; font-weight: bold;">\\</span><span style="color: #b58900; font-weight: bold;">)</span><span style="color: #2aa198;">"</span> (current-word))))
+  openvpn_cmd = <span style="color: #2aa198;">"sudo openvpn --config</span><span style="color: #268bd2;"> #{openvpn_config_file.path}</span><span style="color: #2aa198;">"</span>
+  puts openvpn_cmd
+  system(openvpn_cmd, <span style="color: #268bd2; font-weight: bold;">out</span>: <span style="color: #268bd2;">$stdout</span>, <span style="color: #268bd2; font-weight: bold;">err</span>: <span style="color: #268bd2; font-weight: bold;">:out</span>)
+<span style="color: #859900; font-weight: bold;">ensure</span>
+  openvpn_config_file.close
+  openvpn_config_file.unlink
+<span style="color: #859900; font-weight: bold;">end</span>
 </pre>
 </div>
 </div>
@@ -203,12 +176,12 @@ end 很明顯 else 和 elsif 是向 &hellip;">
   
 
 
-<time datetime="2013-08-29T00:00:00+08:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
+<time datetime="2013-10-20T00:00:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/emacs/'>emacs</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
+    <a class='category' href='/blog/categories/openvpn/'>openvpn</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/vpngate/'>vpngate</a>
   
 </span>
 
@@ -224,10 +197,8 @@ end 很明顯 else 和 elsif 是向 &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013-08-27-armstrong-num-ruby.html" title="Previous Post: 阿姆斯壯數 (Ruby)">&laquo; 阿姆斯壯數 (Ruby)</a>
+        <a class="basic-alignment left" href="/blog/2013-10-19-evil-ruby-jump-item.html" title="Previous Post: Ruby block match and jump (emacs evil-mode)">&laquo; Ruby block match and jump (emacs evil-mode)</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013-09-03-pascal-triangle-ruby.html" title="Next Post: 帕斯卡三角形 (Ruby)">帕斯卡三角形 (Ruby) &raquo;</a>
       
     </p>
   </footer>
@@ -297,8 +268,8 @@ end 很明顯 else 和 elsif 是向 &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://XuHaoJun.github.io/blog/2013-08-29-emacs-ruby-if-else-intdent.html';
-        var disqus_url = 'http://XuHaoJun.github.io/blog/2013-08-29-emacs-ruby-if-else-intdent.html';
+        var disqus_identifier = 'http://XuHaoJun.github.io/blog/2013-10-20-openvpn_and_vpngate.html';
+        var disqus_url = 'http://XuHaoJun.github.io/blog/2013-10-20-openvpn_and_vpngate.html';
         var disqus_script = 'embed.js';
       
     (function () {

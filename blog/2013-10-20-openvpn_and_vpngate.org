@@ -1,0 +1,60 @@
+#+TITLE: Openvpen + Vpn Gate + Ruby script
+#+DATE: 2013-10-20
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: openvpn vpngate ruby
+#+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
+
+寫了個連去 vpngate 用的小腳本，不然每次得去官網手動下載設定檔太麻煩了。
+
+預設是連質量最高的 Server，也只能連這個，以後看需求重寫吧。
+{{{more}}}
+* Source
+#+BEGIN_SRC ruby
+  #!/usr/bin/env ruby
+  ### 1. Download(curl) vpngate csv from offical site
+  ### 2. Convert csv to ruby array
+  ### 3. Decode openvpn config by base64
+  ### 4. Run command openvpn and use the highest score server config file
+
+  require 'csv'
+  require 'base64'
+  require 'tempfile'
+
+  ### 1.
+  vpngate_csv_url = "http://www.vpngate.net/api/iphone/"
+  puts "==> Downloading vpngate csv from #{vpngate_csv_url}"
+  vpngate_ori_csv = `curl #{vpngate_csv_url}`
+  if not vpngate_ori_csv.empty?
+    puts "==> Successfully download"
+  else
+    puts "==> Fail to download vpngate csv"
+  end
+
+  ### 2.
+  vg_rb_csv = CSV.parse(vpngate_ori_csv)
+  # vg_rb_csv[1]
+  # => ["#HostName", "IP", "Score", "Ping", "Speed", "CountryLong", "CountryShort",
+  #     "NumVpnSessions", "Uptime", "TotalUsers", "TotalTraffic", "LogType", "Operator",
+  #     "Message", "OpenVPN_ConfigData_Base64"]
+
+  ### 3.
+  openvpn_config = Base64.decode64 vg_rb_csv[2][-1] # vg_rb_csv[2] is the first server csv data
+
+  ### 4.
+  openvpn_config_file = Tempfile.new(vg_rb_csv[2][0])
+  openvpn_config_file.write(openvpn_config)
+  begin
+    puts "========================================================================"
+    puts "==> Use the highest score server"
+    puts "==> Server info: IP:#{vg_rb_csv[2][1]} Country:#{vg_rb_csv[2][5]} Score:#{vg_rb_csv[2][2]}"
+
+    openvpn_cmd = "sudo openvpn --config #{openvpn_config_file.path}"
+    puts openvpn_cmd
+    system(openvpn_cmd, out: $stdout, err: :out)
+  ensure
+    openvpn_config_file.close
+    openvpn_config_file.unlink
+  end
+#+END_SRC
