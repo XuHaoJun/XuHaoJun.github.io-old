@@ -22,6 +22,7 @@
   require 'base64'
   require 'tempfile'
 
+  ### 1.
   vpngate_csv_url = "http://www.vpngate.net/api/iphone/"
   puts "==> Downloading vpngate csv from #{vpngate_csv_url}"
   vpngate_ori_csv = `curl #{vpngate_csv_url}`
@@ -32,14 +33,20 @@
     exit 0
   end
 
+
+  ### 2.
   vg_rb_csv = CSV.parse(vpngate_ori_csv)
   # vg_rb_csv[1]
   # => ["#HostName", "IP", "Score", "Ping", "Speed", "CountryLong", "CountryShort",
   #     "NumVpnSessions", "Uptime", "TotalUsers", "TotalTraffic", "LogType", "Operator",
   #     "Message", "OpenVPN_ConfigData_Base64"]
 
+
+  ### 3.
   openvpn_config = Base64.decode64 vg_rb_csv[2][-1] # vg_rb_csv[2] is the first server csv data
 
+
+  ### 4.
   openvpn_config_file = Tempfile.new(vg_rb_csv[2][0])
   openvpn_config_file.write(openvpn_config)
   begin

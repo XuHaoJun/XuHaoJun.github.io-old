@@ -115,6 +115,7 @@ require <span style="color: #2aa198;">'csv'</span>
 require <span style="color: #2aa198;">'base64'</span>
 require <span style="color: #2aa198;">'tempfile'</span>
 
+<span style="color: #586e75;">### </span><span style="color: #586e75;">1.</span>
 vpngate_csv_url = <span style="color: #2aa198;">"http://www.vpngate.net/api/iphone/"</span>
 puts <span style="color: #2aa198;">"==&gt; Downloading vpngate csv from</span><span style="color: #268bd2;"> #{vpngate_csv_url}</span><span style="color: #2aa198;">"</span>
 vpngate_ori_csv = <span style="color: #2aa198;">`curl</span><span style="color: #268bd2;"> #{vpngate_csv_url}</span><span style="color: #2aa198;">`</span>
@@ -125,14 +126,20 @@ vpngate_ori_csv = <span style="color: #2aa198;">`curl</span><span style="color: 
   exit 0
 <span style="color: #859900; font-weight: bold;">end</span>
 
+
+<span style="color: #586e75;">### </span><span style="color: #586e75;">2.</span>
 vg_rb_csv = <span style="color: #b58900;">CSV</span>.parse(vpngate_ori_csv)
 <span style="color: #586e75;"># </span><span style="color: #586e75;">vg_rb_csv[1]</span>
 <span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; ["#HostName", "IP", "Score", "Ping", "Speed", "CountryLong", "CountryShort",</span>
 <span style="color: #586e75;">#     </span><span style="color: #586e75;">"NumVpnSessions", "Uptime", "TotalUsers", "TotalTraffic", "LogType", "Operator",</span>
 <span style="color: #586e75;">#     </span><span style="color: #586e75;">"Message", "OpenVPN_ConfigData_Base64"]</span>
 
+
+<span style="color: #586e75;">### </span><span style="color: #586e75;">3.</span>
 openvpn_config = <span style="color: #b58900;">Base64</span>.decode64 vg_rb_csv[2][-1] <span style="color: #586e75;"># </span><span style="color: #586e75;">vg_rb_csv[2] is the first server csv data</span>
 
+
+<span style="color: #586e75;">### </span><span style="color: #586e75;">4.</span>
 openvpn_config_file = <span style="color: #b58900;">Tempfile</span>.new(vg_rb_csv[2][0])
 openvpn_config_file.write(openvpn_config)
 <span style="color: #859900; font-weight: bold;">begin</span>
