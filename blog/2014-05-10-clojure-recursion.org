@@ -1,0 +1,79 @@
+#+TITLE: Clojure 遞迴測試
+#+DATE: 2014-05-10
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: clojure
+#+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
+
+
+[[http://clojure.org/functional_programming#Functional%2520Programming--Recursive%2520Looping][Clojure Recursive Looping]]
+* 傳統遞迴
+** Source
+#+BEGIN_SRC clojure
+  (defn deepable-recur? [deep-length]
+    (if (= 0 deep-length)
+      true
+      (deepable-recur? (dec deep-length))))
+#+END_SRC
+
+{{{more}}}
+** Test
+- 一個很蠢的測試函式：
+#+BEGIN_SRC clojure
+  (defn deep-test [start end step deep-fn]
+    (doseq [length (range start end step)]
+      (if (deep-fn length)
+        (println length "Deep Done!"))))
+  (deep-test 5000 10000 1000 deepable-recur?)
+  ;;; output->
+  ;; 5000 Deep Done!
+  ;; 6000 Deep Done!
+  ;; 7000 Deep Done!
+  ;; 8000 Deep Done!
+  ;; StackOverflowError   clojure.lang.Numbers$LongOps.combine (Numbers.java:394)
+#+END_SRC
+
+* Clojure recur special operator
+** Source
+#+BEGIN_SRC clojure
+  (defn deepable-recur? [deep-length]
+    (loop [len deep-length]
+      (if (= 0 len)
+        true
+        (recur (dec len)))))
+#+END_SRC
+
+** Test
+#+BEGIN_SRC clojure
+  (deep-test 60000000 80000000 2000000 deepable-recur?)
+  ;;; output->
+  ;; 60000000 Deep Done!
+  ;; 62000000 Deep Done!
+  ;; 64000000 Deep Done!
+  ;; 66000000 Deep Done!
+  ;; 68000000 Deep Done!
+  ;; 70000000 Deep Done!
+  ;; 72000000 Deep Done!
+  ;; 74000000 Deep Done!
+  ;; 76000000 Deep Done!
+  ;; 78000000 Deep Done!
+  ;; nil
+#+END_SRC
+
+* Clojure trampoline
+** Source
+#+BEGIN_SRC clojure
+  (defn deepable-recur? [deep-length]
+    (if (= 0 deep-length)
+      true
+      #(deepable-recur? (dec deep-length))))
+#+END_SRC
+
+** Test
+比上面那個慢多了。
+#+BEGIN_SRC clojure
+  (trampoline deepable-recur? 70000000)
+  ;;; output->
+  ;; true
+#+END_SRC
