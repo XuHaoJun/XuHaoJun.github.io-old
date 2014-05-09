@@ -1,0 +1,117 @@
+#+TITLE: Clojure/Clojurescript Emacs 開發環境
+#+DATE: 2014-05-06
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: clojure clojurescript emacs
+#+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
+
+簡單的 clojure/clojurescript 開發環境。
+
+{{{more}}}
+
+* 基本功能安裝
+推薦從 emacs 24 起，自帶的 package 系統來安裝。
+
+首先加入更多 package 的安裝來源 [[http://melpa.milkbox.net][melpa]] [[http://marmalade-repo.org/][marmalade]]
+#+BEGIN_SRC emacs-lisp
+  (defvar marmalade '("marmalade" . "http://marmalade-repo.org/packages/"))
+  (defvar gnu '("gnu" . "http://elpa.gnu.org/packages/"))
+  (defvar melpa '("melpa" . "http://melpa.milkbox.net/packages/"))
+
+  (add-to-list 'package-archives marmalade)
+  (add-to-list 'package-archives melpa t)
+
+  (package-initialize)
+#+END_SRC
+
+安裝 clojure-mode：
+=M-x package-install= =clojure-mode=
+
+這樣就有基本的代碼高亮和縮進功能了。
+
+* 強力插件: CIDER (Clojure IDE and REPL)
+[[https://github.com/clojure-emacs/cider][CIDER-github]]
+** 安裝
+=M-x package-install= =cider=
+
+** REPL (交互式編程環境)
+[[https://zh.wikipedia.org/wiki/%25E8%25AF%25BB%25E5%258F%2596%25EF%25B9%25A3%25E6%25B1%2582%25E5%2580%25BC%25EF%25B9%25A3%25E8%25BE%2593%25E5%2587%25BA%25E5%25BE%25AA%25E7%258E%25AF][REPL-wiki]]
+
+*** 安裝：
+推薦使用[[http://leiningen.org/][leiningen]] 來管理你的 clojure project.
+
+=lein new myproject=
+
+安裝 [[https://github.com/clojure-emacs/cider-nrepl][cider-nrepl]]
+在 =~/.lein/profiles.clj= 加入以下兩行
+#+BEGIN_SRC clojure
+  {:user
+   {:plugins [[cider/cider-nrepl "0.7.0-SNAPSHOT"]]}}
+#+END_SRC
+
+*** 使用：
+接下來在你的 emacs 執行 =M-x cider-jack-in=
+沒有意外的話，會出現一個 repl 的 buffer，關掉是 =cider-quit= 。
+
+幾個必用的 emacs function , 把他們綁在你喜歡的 key 上吧。
+=cider-eval-last-sexp= , =cider-eval-defun-at-point= ,
+=cider-switch-to-repl-buffer= , =cider-jump=
+
+** Browser REPL (for clojurescript)
+[[https://github.com/cemerick/austin][Austin-github]] [[https://github.com/cemerick/austin/tree/master/browser-connected-repl-sample][專案範例]]
+在 =~/.lein/profiles.clj= 加入以下兩行
+#+BEGIN_SRC clojure
+  {:user
+   {:plugins [[com.cemerick/austin "0.1.4"]]}}
+#+END_SRC
+
+在你的 cljs 檔案裡的 namespace 新增：
+#+BEGIN_SRC clojure
+  (:require [clojure.browser.repl])
+#+END_SRC
+
+在 REPL 的環境裡：
+#+BEGIN_SRC clojure
+  (def repl-env (reset! cemerick.austin.repls/browser-repl-env
+                        (cemerick.austin/repl-env)))
+  (cemerick.austin.repls/cljs-repl repl-env)
+#+END_SRC
+
+接下來在新的 REPL 環境裡：
+
+#+BEGIN_SRC clojure
+  (js/alert "hello browser")
+#+END_SRC
+
+你的 browser 應該會有反應。
+
+** 自動補全
+[[https://github.com/company-mode/company-mode][company-mode-github]]
+
+*** 安裝：
+=M-x package-install= =company=
+
+開啟：
+=M-x global-company-mode=
+
+預設開啟：
+在你的 init.el 加入這行。
+#+BEGIN_SRC emacs-lisp
+  (global-company-mode)
+#+END_SRC
+
+*** 使用：
+必須在你的 repl 開啟的時候才有效！
+
+=M-n=, =M-p= 上下選擇候選鍵。
+
+#+ATTR_HTML: :align left
+https://company-mode.github.io/images/company-elisp.png
+
+* 其他插件推薦
+[[https://github.com/jlr/rainbow-delimiters][rainbow-delimiters]]
+
+[[https://gitorious.org/evil/pages/Home][evil]]
+
+[[http://www.emacswiki.org/emacs/InteractivelyDoThings][ido]]

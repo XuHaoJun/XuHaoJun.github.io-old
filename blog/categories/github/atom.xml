@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-10-20T17:02:31+08:00</updated>
+  <updated>2014-05-09T16:54:34+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -18,9 +18,9 @@
     <link href="http://XuHaoJun.github.io/blog/2013-08-23-emacs-org-octopress.html"/>
     <updated>2013-08-23T00:00:00+08:00</updated>
     <id>http://XuHaoJun.github.io/blog/emacs-org-octopress</id>
-    <content type="html"><![CDATA[<ul class="org-ul">
+    <content type="html"><![CDATA[<ul class='org-ul'>
 <li>優點
-<ul class="org-ul">
+<ul class='org-ul'>
 <li>免費網域、免費託管、免費流量
 </li>
 <li>版本管理，不用擔心備份！
@@ -30,51 +30,36 @@
 </ul>
 </li>
 <li>缺點
-<ul class="org-ul">
-<li>技術門檻要求較高 <br/>
+<ul class='org-ul'>
+<li>技術門檻要求較高 <br />
     需要懂一些 Git, Github, Org-mode 或 Makrdown，更進階要客製化 Blog 的話，可能還要懂些許 Ruby (jekyll)
 </li>
 <li>Org-mode 的 code block 沒有 markdown's code block 的 title url 功能。
 </li>
 </ul>
 </li>
-</ul>
-
-
-
-
-<p>
+</ul><p>
 <!-- more -->
-</p>
-
-
-
-
-<hr/>
-
-
-
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Org-mode</h2>
-<div class="outline-text-2" id="text-1">
+</p><hr /><div class='outline-2' id='outline-container-sec-1'>
+<h2 id='sec-1'>Org-mode</h2>
+<div class='outline-text-2' id='text-1'>
 <blockquote>
 <p>
 Org mode is for keeping notes, maintaining TODO lists, planning projects, and
-authoring documents with a fast and effective plain-text system. <br/>
-<b><a href="http://orgmode.org/">http://orgmode.org/</a></b>
+authoring documents with a fast and effective plain-text system. <br />
+<b><a href='http://orgmode.org/'>http://orgmode.org/</a></b>
 </p>
 </blockquote>
 <p>
 Org-mode 是建立於 Emacs(編輯器) 之上的插件，是一種輕量級的標記語言可以用來做時間管理、筆記、生成 Html &#x2026; ，同類型的流行的還有 Markdown，這篇文章基本上就是
-Emacs + org-mode 寫的，之後在透過插件 <a href="https://github.com/yoshinari-nomura/org-octopress">org-octopress</a> 生成給 Octopress 用。
+Emacs + org-mode 寫的，之後在透過插件 <a href='https://github.com/yoshinari-nomura/org-octopress'>org-octopress</a> 生成給 Octopress 用。
 </p>
 </div>
 
 
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">Install Emacs(24.x)</h3>
-<div class="outline-text-3" id="text-1-1">
+<div class='outline-3' id='outline-container-sec-1-1'>
+<h3 id='sec-1-1'>Install Emacs(24.x)</h3>
+<div class='outline-text-3' id='text-1-1'>
 <p>
 我只會在 Linux 平台上用 Package 裝。
 </p>
@@ -82,24 +67,24 @@ Emacs + org-mode 寫的，之後在透過插件 <a href="https://github.com/yosh
 <p>
 一些流行的 Linux distribution 的 Package Manager 安裝方法。
 </p>
-<div class="org-src-container">
+<div class='org-src-container'>
 
-<pre class="src src-sh">pacman -S emacs          <span style="color: #586e75;"># </span><span style="color: #586e75;">Archlinux</span>
-apt-get install emacs    <span style="color: #586e75;"># </span><span style="color: #586e75;">Ubuntu</span>
-yum install emacs        <span style="color: #586e75;"># </span><span style="color: #586e75;">Fedora</span>
+<pre class='src src-sh'>pacman -S emacs          <span style='color: #586e75;'># </span><span style='color: #586e75;'>Archlinux</span>
+apt-get install emacs    <span style='color: #586e75;'># </span><span style='color: #586e75;'>Ubuntu</span>
+yum install emacs        <span style='color: #586e75;'># </span><span style='color: #586e75;'>Fedora</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2">Install org and org-octopress</h3>
-<div class="outline-text-3" id="text-1-2">
+<div class='outline-3' id='outline-container-sec-1-2'>
+<h3 id='sec-1-2'>Install org and org-octopress</h3>
+<div class='outline-text-3' id='text-1-2'>
 <p>
 用 Emacs 裡的 Package Manager 安裝：
 </p>
-<div class="org-src-container">
+<div class='org-src-container'>
 
-<pre class="src src-sh"><span style="color: #586e75;"># </span><span style="color: #586e75;">&#22312;&#23478;&#30446;&#37636;&#24314;&#19968;&#20491; .emacs.d &#36039;&#26009;&#22846;&#24460;&#65292;&#22312;&#35041;&#38754;&#24314; init.el</span>
+<pre class='src src-sh'><span style='color: #586e75;'># </span><span style='color: #586e75;'>&#22312;&#23478;&#30446;&#37636;&#24314;&#19968;&#20491; .emacs.d &#36039;&#26009;&#22846;&#24460;&#65292;&#22312;&#35041;&#38754;&#24314; init.el</span>
 mkdir ~/.emacs.d
 touch ~/.emacs.d/init.el
 </pre>
@@ -108,13 +93,13 @@ touch ~/.emacs.d/init.el
 <p>
 在 init.el 添加：
 </p>
-<div class="org-src-container">
+<div class='org-src-container'>
 
-<pre class="src src-emacs-lisp">(add-to-list 'package-archives
-  '(<span style="color: #2aa198;">"marmalade"</span> . <span style="color: #2aa198;">"http://marmalade-repo.org/packages/"</span>))
+<pre class='src src-emacs-lisp'>(add-to-list 'package-archives
+  '(<span style='color: #2aa198;'>"marmalade"</span> . <span style='color: #2aa198;'>"http://marmalade-repo.org/packages/"</span>))
 
 (add-to-list 'package-archives
-  '(<span style="color: #2aa198;">"melpa"</span> . <span style="color: #2aa198;">"http://melpa.milkbox.net/packages/"</span>) t)
+  '(<span style='color: #2aa198;'>"melpa"</span> . <span style='color: #2aa198;'>"http://melpa.milkbox.net/packages/"</span>) t)
 
 (package-initialize)
 </pre>
@@ -125,83 +110,74 @@ touch ~/.emacs.d/init.el
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3">Org-octopress Setup</h3>
-<div class="outline-text-3" id="text-1-3">
+<div class='outline-3' id='outline-container-sec-1-3'>
+<h3 id='sec-1-3'>Org-octopress Setup</h3>
+<div class='outline-text-3' id='text-1-3'>
 <p>
-以下是從 <a href="https://github.com/yoshinari-nomura/org-octopress">org-octopress</a> 的 README 裡擷取 Basic Settings 的片段。
+以下是從 <a href='https://github.com/yoshinari-nomura/org-octopress'>org-octopress</a> 的 README 裡擷取 Basic Settings 的片段。
 </p>
 
 <p>
 添加在 init.el。
 </p>
-<ul class="org-ul">
+<ul class='org-ul'>
 <li>Emacs Settings:
 </li>
 </ul>
-<div class="org-src-container">
+<div class='org-src-container'>
 
-<pre class="src src-emacs-lisp">(<span style="color: #859900; font-weight: bold;">require</span> '<span style="color: #268bd2; font-weight: bold;">org-octopress</span>)
-(setq org-octopress-directory-top       <span style="color: #2aa198;">"~/octopress/source"</span>)
-(setq org-octopress-directory-posts     <span style="color: #2aa198;">"~/octopress/source/_posts"</span>)
-(setq org-octopress-directory-org-top   <span style="color: #2aa198;">"~/octopress/source"</span>)
-(setq org-octopress-directory-org-posts <span style="color: #2aa198;">"~/octopress/source/blog"</span>)
-(setq org-octopress-setup-file          <span style="color: #2aa198;">"~/org-sty/setupfile.org"</span>)
+<pre class='src src-emacs-lisp'>(<span style='color: #859900; font-weight: bold;'>require</span> '<span style='color: #268bd2; font-weight: bold;'>org-octopress</span>)
+(setq org-octopress-directory-top       <span style='color: #2aa198;'>"~/octopress/source"</span>)
+(setq org-octopress-directory-posts     <span style='color: #2aa198;'>"~/octopress/source/_posts"</span>)
+(setq org-octopress-directory-org-top   <span style='color: #2aa198;'>"~/octopress/source"</span>)
+(setq org-octopress-directory-org-posts <span style='color: #2aa198;'>"~/octopress/source/blog"</span>)
+(setq org-octopress-setup-file          <span style='color: #2aa198;'>"~/org-sty/setupfile.org"</span>)
 </pre>
 </div>
 
-<ul class="org-ul">
+<ul class='org-ul'>
 <li>Octopress Settings:
 </li>
 </ul>
 <p>
-In octopress/_config.yml, you must set the permelink attribute: <br/>
+In octopress/_config.yml, you must set the permelink attribute: <br />
 <code>permalink: /blog/:year-:month-:day-:title.html</code>
 </p>
 </div>
 </div>
-</div>
-
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Octopress</h2>
-<div class="outline-text-2" id="text-2">
+</div><div class='outline-2' id='outline-container-sec-2'>
+<h2 id='sec-2'>Octopress</h2>
+<div class='outline-text-2' id='text-2'>
 <p>
-<a href="http://octopress.org/">Octopress</a> 是一套 Blog 的框架，所以一開始你的 Blog 就有一個簡潔的外觀，功能上有支援 Twitter, Facebook, Delicious 等等，也可以用來產生靜態 Blog 後放在 Github
+<a href='http://octopress.org/'>Octopress</a> 是一套 Blog 的框架，所以一開始你的 Blog 就有一個簡潔的外觀，功能上有支援 Twitter, Facebook, Delicious 等等，也可以用來產生靜態 Blog 後放在 Github
 上，預設是用 Markdown 來撰寫文章。
 </p>
 </div>
 
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1">Install and Use Octopress</h3>
-<div class="outline-text-3" id="text-2-1">
+<div class='outline-3' id='outline-container-sec-2-1'>
+<h3 id='sec-2-1'>Install and Use Octopress</h3>
+<div class='outline-text-3' id='text-2-1'>
 <p>
-要先安裝 <a href="http://www.ruby-lang.org/en/">Ruby</a> 和 <a href="http://gitscm.com/">Git</a>。 <br/>
-官方的方法： <a href="http://octopress.org/docs/setup/">Octopress Setup</a>
+要先安裝 <a href='http://www.ruby-lang.org/en/'>Ruby</a> 和 <a href='http://gitscm.com/'>Git</a>。 <br />
+官方的方法： <a href='http://octopress.org/docs/setup/'>Octopress Setup</a>
 </p>
 </div>
 </div>
-</div>
-
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Github</h2>
-<div class="outline-text-2" id="text-3">
+</div><div class='outline-2' id='outline-container-sec-3'>
+<h2 id='sec-3'>Github</h2>
+<div class='outline-text-2' id='text-3'>
 <p>
-首先有個 <a href="https://github.com/">Github</a> 的帳號後，建立一個 Repository 為 username.github.io，之後去你的 octopress 的根目錄鍵入 <code>bundle exec rake setup_github_page</code> 輸入剛剛建完給你的 url。
+首先有個 <a href='https://github.com/'>Github</a> 的帳號後，建立一個 Repository 為 username.github.io，之後去你的 octopress 的根目錄鍵入 <code>bundle exec rake setup_github_page</code> 輸入剛剛建完給你的 url。
 </p>
 
 <p>
-官方文檔: <a href="https://help.github.com/">GithubHelp</a>
+官方文檔: <a href='https://help.github.com/'>GithubHelp</a>
 </p>
 </div>
-</div>
-
-
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">基本流程</h2>
-<div class="outline-text-2" id="text-4">
-<ol class="org-ol">
+</div><div class='outline-2' id='outline-container-sec-4'>
+<h2 id='sec-4'>基本流程</h2>
+<div class='outline-text-2' id='text-4'>
+<ol class='org-ol'>
 <li>開啟 Emacs 鍵入 <code>M-x org-octopress RET</code> ，會到 org-octopress 的界面鍵入 <code>w</code>
 和標題，開始撰寫文章。
 </li>
@@ -215,12 +191,10 @@ In octopress/_config.yml, you must set the permelink attribute: <br/>
 
 <p>
 文章打到一半或要做確認的時候用(需先生成靜態網頁) <code>bundle exec rake preview</code> ，之後在
-<a href="http://localhost:4000/">http://localhost:4000/</a> 可以看你的 Blog。
+<a href='http://localhost:4000/'>http://localhost:4000/</a> 可以看你的 Blog。
 </p>
 </div>
-</div>
-
-]]></content>
+</div>]]></content>
   </entry>
   
 </feed>

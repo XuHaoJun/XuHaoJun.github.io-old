@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | XuBlog]]></title>
   <link href="http://XuHaoJun.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2013-10-20T17:02:31+08:00</updated>
+  <updated>2014-05-09T16:54:34+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -18,87 +18,77 @@
     <link href="http://XuHaoJun.github.io/blog/2013-09-03-pascal-triangle-ruby.html"/>
     <updated>2013-09-03T00:00:00+08:00</updated>
     <id>http://XuHaoJun.github.io/blog/pascal-triangle-ruby</id>
-    <content type="html"><![CDATA[<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">帕斯卡三角形</h2>
-<div class="outline-text-2" id="text-1">
+    <content type="html"><![CDATA[<div class='outline-2' id='outline-container-sec-1'>
+<h2 id='sec-1'>帕斯卡三角形</h2>
+<div class='outline-text-2' id='text-1'>
 
-<div class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PascalTriangleAnimated2.gif/210px-PascalTriangleAnimated2.gif" align="right" alt="210px-PascalTriangleAnimated2.gif"/></p>
+<div class='figure'>
+<p><img align='right' alt='210px-PascalTriangleAnimated2.gif' src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PascalTriangleAnimated2.gif/210px-PascalTriangleAnimated2.gif' /></p>
 </div>
 
-<div class="org-src-container">
+<div class='org-src-container'>
 
-<pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">pascal_triangle</span>(n, i = 2, result = [[1], [1,1]])
-  <span style="color: #859900; font-weight: bold;">if</span> n == 1
+<pre class='src src-ruby'><span style='color: #859900; font-weight: bold;'>def</span> <span style='color: #268bd2;'>pascal_triangle</span>(n, i = 2, result = [[1], [1,1]])
+  <span style='color: #859900; font-weight: bold;'>if</span> n == 1
     [[1]]
-  <span style="color: #859900; font-weight: bold;">elsif</span> n == 2
+  <span style='color: #859900; font-weight: bold;'>elsif</span> n == 2
     [[1], [1,1]]
-  <span style="color: #859900; font-weight: bold;">elsif</span> i == n
+  <span style='color: #859900; font-weight: bold;'>elsif</span> i == n
     result
-  <span style="color: #859900; font-weight: bold;">else</span>
+  <span style='color: #859900; font-weight: bold;'>else</span>
     current_row = [1]
-    (i-1).times <span style="color: #859900; font-weight: bold;">do</span> |n|
+    (i-1).times <span style='color: #859900; font-weight: bold;'>do</span> |n|
       current_row &lt;&lt; (result[i-1][n] + result[i-1][n+1])
-    <span style="color: #859900; font-weight: bold;">end</span>
+    <span style='color: #859900; font-weight: bold;'>end</span>
     current_row &lt;&lt; 1
 
     pascal_triangle(n, i+1, result &lt;&lt; current_row)
-  <span style="color: #859900; font-weight: bold;">end</span>
-<span style="color: #859900; font-weight: bold;">end</span>
+  <span style='color: #859900; font-weight: bold;'>end</span>
+<span style='color: #859900; font-weight: bold;'>end</span>
 </pre>
 </div>
 
-<ul class="org-ul">
-<li>Image reference: <a href="https://zh.wikipedia.org/zh-tw/%25E6%259D%25A8%25E8%25BE%2589%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2">Pascal-triangle Wikipedia-chi</a>
+<ul class='org-ul'>
+<li>Image reference: <a href='https://zh.wikipedia.org/zh-tw/%25E6%259D%25A8%25E8%25BE%2589%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2'>Pascal-triangle Wikipedia-chi</a>
 </li>
 </ul>
 <p>
 <!-- more -->
 </p>
 </div>
-</div>
+</div><div class='outline-2' id='outline-container-sec-2'>
+<h2 id='sec-2'>Output</h2>
+<div class='outline-text-2' id='text-2'>
+<div class='org-src-container'>
 
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Output</h2>
-<div class="outline-text-2" id="text-2">
-<div class="org-src-container">
-
-<pre class="src src-ruby">pst = pascal_triangle(7)
+<pre class='src src-ruby'>pst = pascal_triangle(7)
 
 puts pst.pretty_inspect
 
-<span style="color: #586e75;">=begin</span>
-<span style="color: #586e75;">[[1],</span>
-<span style="color: #586e75;"> [1, 1],</span>
-<span style="color: #586e75;"> [1, 2, 1],</span>
-<span style="color: #586e75;"> [1, 3, 3, 1],</span>
-<span style="color: #586e75;"> [1, 4, 6, 4, 1],</span>
-<span style="color: #586e75;"> [1, 5, 10, 10, 5, 1],</span>
-<span style="color: #586e75;"> [1, 6, 15, 20, 15, 6, 1]]</span>
-<span style="color: #586e75;">=&gt; nil</span>
-<span style="color: #586e75;">=end</span>
+<span style='color: #586e75;'>=begin</span>
+<span style='color: #586e75;'>[[1],</span>
+<span style='color: #586e75;'> [1, 1],</span>
+<span style='color: #586e75;'> [1, 2, 1],</span>
+<span style='color: #586e75;'> [1, 3, 3, 1],</span>
+<span style='color: #586e75;'> [1, 4, 6, 4, 1],</span>
+<span style='color: #586e75;'> [1, 5, 10, 10, 5, 1],</span>
+<span style='color: #586e75;'> [1, 6, 15, 20, 15, 6, 1]]</span>
+<span style='color: #586e75;'>=&gt; nil</span>
+<span style='color: #586e75;'>=end</span>
 </pre>
 </div>
 </div>
-</div>
+</div><div class='outline-2' id='outline-container-sec-3'>
+<h2 id='sec-3'>Check</h2>
+<div class='outline-text-2' id='text-3'>
+<div class='org-src-container'>
 
-
-
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Check</h2>
-<div class="outline-text-2" id="text-3">
-<div class="org-src-container">
-
-<pre class="src src-ruby">pst.map {|row| row.reduce(<span style="color: #268bd2; font-weight: bold;">:+</span>) == 2 ** (row.length - 1) }
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [true, true, true, true, true, true, true]</span>
+<pre class='src src-ruby'>pst.map {|row| row.reduce(<span style='color: #268bd2; font-weight: bold;'>:+</span>) == 2 ** (row.length - 1) }
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>=&gt; [true, true, true, true, true, true, true]</span>
 </pre>
 </div>
 </div>
-</div>
-
-]]></content>
+</div>]]></content>
   </entry>
   
   <entry>
@@ -108,81 +98,71 @@ puts pst.pretty_inspect
     <id>http://XuHaoJun.github.io/blog/armstrong-num-ruby</id>
     <content type="html"><![CDATA[<p>
 寫一些簡單的演算法來熟悉 Ruby。
-</p>
-
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Armstrong number</h2>
-<div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li><a href="https://zh.wikipedia.org/wiki/%25E6%25B0%25B4%25E4%25BB%2599%25E8%258A%25B1%25E6%2595%25B0">阿姆斯壯數 - WiKi</a>
+</p><div class='outline-2' id='outline-container-sec-1'>
+<h2 id='sec-1'>Armstrong number</h2>
+<div class='outline-text-2' id='text-1'>
+<ul class='org-ul'>
+<li><a href='https://zh.wikipedia.org/wiki/%25E6%25B0%25B4%25E4%25BB%2599%25E8%258A%25B1%25E6%2595%25B0'>阿姆斯壯數 - WiKi</a>
 </li>
 </ul>
 <p>
-指一 N 位数，其各个数之 N 次方和等于该数。 <br/>
+指一 N 位数，其各个数之 N 次方和等于该数。 <br />
 </p>
 
 <p>
-例如 153、370、371 及 407 就是三位數的水仙花数，其各个数之立方和等于该数： <br/>
+例如 153、370、371 及 407 就是三位數的水仙花数，其各个数之立方和等于该数： <br />
 <!-- more -->
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_e141c033bb0e669b266fc28f8d36f2011481ba63.png"  alt="$153 = 1^3 + 5^3 + 3^3$"/> <br/>
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_9eb5ee3740baed1f5a29bcd886e4d39db8abae6f.png"  alt="$370 = 3^3 + 7^3 + 0^3$"/> <br/>
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_06e1db69575b29de5a03efa3759af10c7e7d8c4c.png"  alt="$371 = 3^3 + 7^3 + 1^3$"/> <br/>
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_8b45137dca877cbbdfd1f5e616004b03035b6add.png"  alt="$407 = 4^3 + 0^3 + 7^3$"/>
+<img alt='$153 = 1^3 + 5^3 + 3^3$' src='ltxpng/2013-08-27-armstrong-num-ruby_e141c033bb0e669b266fc28f8d36f2011481ba63.png' /> <br />
+<img alt='$370 = 3^3 + 7^3 + 0^3$' src='ltxpng/2013-08-27-armstrong-num-ruby_9eb5ee3740baed1f5a29bcd886e4d39db8abae6f.png' /> <br />
+<img alt='$371 = 3^3 + 7^3 + 1^3$' src='ltxpng/2013-08-27-armstrong-num-ruby_06e1db69575b29de5a03efa3759af10c7e7d8c4c.png' /> <br />
+<img alt='$407 = 4^3 + 0^3 + 7^3$' src='ltxpng/2013-08-27-armstrong-num-ruby_8b45137dca877cbbdfd1f5e616004b03035b6add.png' />
 </p>
 </div>
-</div>
-
-
-
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Source code</h2>
-<div class="outline-text-2" id="text-2">
+</div><div class='outline-2' id='outline-container-sec-2'>
+<h2 id='sec-2'>Source code</h2>
+<div class='outline-text-2' id='text-2'>
 <p>
-不曉得型別轉來轉去算不算壞習慣&#x2026;。 <br/>
+不曉得型別轉來轉去算不算壞習慣&#x2026;。 <br />
 </p>
 
 <p>
-有用到 lazy 這個 enumerator，如果沒用 lazy 的話就會當在那裡了，lazy 感覺很像是一個一個求值後在判斷在存值，沒有使用的話則一次全部求值後在做事。 <br/>
+有用到 lazy 這個 enumerator，如果沒用 lazy 的話就會當在那裡了，lazy 感覺很像是一個一個求值後在判斷在存值，沒有使用的話則一次全部求值後在做事。 <br />
 </p>
 
 <p>
 懶的想怎麼做優化了，怕到時候改一改可讀性就沒現在這個好了，先留這個作筆記。
 </p>
 
-<div class="org-src-container">
+<div class='org-src-container'>
 
-<pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Integer</span>
-  <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">armstrong_num?</span> <span style="color: #586e75;"># </span><span style="color: #586e75;">may be have more better name..</span>
+<pre class='src src-ruby'><span style='color: #859900; font-weight: bold;'>class</span> <span style='color: #b58900;'>Integer</span>
+  <span style='color: #859900; font-weight: bold;'>def</span> <span style='color: #268bd2;'>armstrong_num?</span> <span style='color: #586e75;'># </span><span style='color: #586e75;'>may be have more better name..</span>
     sum = 0
-    digits = <span style="color: #268bd2;">self</span>.to_s.length
-    digits.times { |n| sum += (<span style="color: #268bd2;">self</span>.to_s[n].to_i ** digits) }
-    <span style="color: #859900; font-weight: bold;">return</span> sum == <span style="color: #268bd2;">self</span>
-  <span style="color: #859900; font-weight: bold;">end</span>
-<span style="color: #859900; font-weight: bold;">end</span>
+    digits = <span style='color: #268bd2;'>self</span>.to_s.length
+    digits.times { |n| sum += (<span style='color: #268bd2;'>self</span>.to_s[n].to_i ** digits) }
+    <span style='color: #859900; font-weight: bold;'>return</span> sum == <span style='color: #268bd2;'>self</span>
+  <span style='color: #859900; font-weight: bold;'>end</span>
+<span style='color: #859900; font-weight: bold;'>end</span>
 
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#19977;&#20301;&#25976;&#30340;&#25152;&#26377;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>&#19977;&#20301;&#25976;&#30340;&#25152;&#26377;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
 (100...1000).select{ |x| x.armstrong_num? }
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [153, 370, 371, 407]</span>
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>=&gt; [153, 370, 371, 407]</span>
 
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#22235;&#20301;&#25976;&#30340;&#31532;&#19968;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>&#22235;&#20301;&#25976;&#30340;&#31532;&#19968;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
 (1000...10000).select{ |x| x.armstrong_num? }.first(1)
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [1634]</span>
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>=&gt; [1634]</span>
 
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#21069; 15 &#20491;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
-(1..<span style="color: #b58900;">Float</span>::<span style="color: #b58900;">INFINITY</span>).lazy.select{ |x| x.armstrong_num? }.first(15)
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208]</span>
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>&#21069; 15 &#20491;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
+(1..<span style='color: #b58900;'>Float</span>::<span style='color: #b58900;'>INFINITY</span>).lazy.select{ |x| x.armstrong_num? }.first(15)
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208]</span>
 
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#21069;&#19977;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;&#65292;&#24478;&#19977;&#20301;&#25976;&#38283;&#22987;</span>
-(100..<span style="color: #b58900;">Float</span>::<span style="color: #b58900;">INFINITY</span>).lazy.select{ |x| x.armstrong_num? }.first(3)
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [153, 370, 371]</span>
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>&#21069;&#19977;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;&#65292;&#24478;&#19977;&#20301;&#25976;&#38283;&#22987;</span>
+(100..<span style='color: #b58900;'>Float</span>::<span style='color: #b58900;'>INFINITY</span>).lazy.select{ |x| x.armstrong_num? }.first(3)
+<span style='color: #586e75;'># </span><span style='color: #586e75;'>=&gt; [153, 370, 371]</span>
 </pre>
 </div>
 </div>
-</div>
-
-]]></content>
+</div>]]></content>
   </entry>
   
 </feed>

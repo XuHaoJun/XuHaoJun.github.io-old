@@ -2,58 +2,62 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-17-about-web-programming.html</loc>
-        <lastmod>2013-08-17T21:34:50+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-17-first-write-blog.html</loc>
-        <lastmod>2013-08-17T21:37:44+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-17-my-pentadactyl-tip.html</loc>
-        <lastmod>2013-08-23T09:11:23+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-19-han-extra-space-org-mode.html</loc>
-        <lastmod>2013-08-23T09:11:23+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-23-emacs-org-octopress.html</loc>
-        <lastmod>2013-08-26T23:24:30+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-25-gen-uniq-nums-ruby.html</loc>
-        <lastmod>2013-08-29T07:35:08+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-27-armstrong-num-ruby.html</loc>
-        <lastmod>2013-08-27T06:49:02+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-29-emacs-ruby-if-else-intdent.html</loc>
-        <lastmod>2013-08-29T15:40:46+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-09-03-pascal-triangle-ruby.html</loc>
-        <lastmod>2013-09-03T23:26:28+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-10-19-evil-ruby-jump-item.html</loc>
-        <lastmod>2013-10-19T16:48:12+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-10-20-openvpn_and_vpngate.html</loc>
-        <lastmod>2013-10-20T17:02:09+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/blog/2014-05-06-writing-clojure-in-emacs.html</loc>
+        <lastmod>2014-05-09T16:53:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/</loc>
-        <lastmod>2013-10-20T17:02:09+08:00</lastmod>
+        <lastmod>2014-05-09T16:53:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/archives/</loc>
-        <lastmod>2013-10-20T17:02:09+08:00</lastmod>
+        <lastmod>2014-05-09T16:53:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/robots.txt</loc>
-        <lastmod>2013-08-17T03:18:44+08:00</lastmod>
+        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
     </url>
 </urlset>
