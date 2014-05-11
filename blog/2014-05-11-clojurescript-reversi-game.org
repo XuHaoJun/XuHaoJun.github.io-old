@@ -4,6 +4,7 @@
 #+JEKYLL_LAYOUT: post
 #+JEKYLL_CATEGORIES: clojure clojurescript html5
 #+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
 
 一個簡單的單機網頁(html5)黑白棋遊戲。
 
