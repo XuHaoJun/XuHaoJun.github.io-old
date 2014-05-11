@@ -100,11 +100,12 @@ module Jekyll
       category_dir = config['category_dir']
       categories = context.registers[:site].categories
       categories.keys.sort_by{ |str| str.downcase }.each do |category|
-        html << "<li><a href='/#{category_dir}/#{category.to_url}/'>#{category}"
+        html << "<a class='list-group-item' href='/#{category_dir}/#{category.to_url}/'>"
         if @opts['counter']
-          html << " (#{categories[category].count})"
+          html << "<span class='badge'> #{categories[category].count} </span>"
         end
-        html << "</a></li>"
+        html << "#{category}"
+        html << "</a>"
       end
       html
     end
