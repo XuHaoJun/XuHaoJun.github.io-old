@@ -2,66 +2,98 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-17-about-web-programming.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-17-first-write-blog.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-17-my-pentadactyl-tip.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-19-han-extra-space-org-mode.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-23-emacs-org-octopress.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-25-gen-uniq-nums-ruby.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-27-armstrong-num-ruby.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-08-29-emacs-ruby-if-else-intdent.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-09-03-pascal-triangle-ruby.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-10-19-evil-ruby-jump-item.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2013-10-20-openvpn_and_vpngate.html</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2014-05-06-writing-clojure-in-emacs.html</loc>
-        <lastmod>2014-05-11T16:26:09+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/2014-05-10-clojure-recursion.html</loc>
-        <lastmod>2014-05-10T00:56:31+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/assets/bootstrap/docs/about.html</loc>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/assets/bootstrap/docs/components.html</loc>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/assets/bootstrap/docs/javascript.html</loc>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/assets/bootstrap/docs/</loc>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/assets/bootstrap/docs/migration.html</loc>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/assets/bootstrap/docs/getting-started.html</loc>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/assets/bootstrap/docs/css.html</loc>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://XuHaoJun.github.io/assets/bootstrap/docs/customize.html</loc>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/</loc>
-        <lastmod>2014-05-11T16:26:09+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/blog/archives/</loc>
-        <lastmod>2014-05-11T16:26:09+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://XuHaoJun.github.io/robots.txt</loc>
-        <lastmod>2014-05-09T16:37:52+08:00</lastmod>
+        <lastmod>2014-05-11T17:03:57+08:00</lastmod>
     </url>
 </urlset>

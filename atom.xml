@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[XuBlog]]></title>
+  <title><![CDATA[(xu-hao-jun)]]></title>
   <link href="http://XuHaoJun.github.io/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2014-05-11T16:40:58+08:00</updated>
+  <updated>2014-05-11T18:09:58+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -408,7 +408,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Openvpn + Vpn Gate + Ruby Script]]></title>
+    <title type="html"><![CDATA[Openvpn + Vpn Gate + Ruby script]]></title>
     <link href="http://XuHaoJun.github.io/blog/2013-10-20-openvpn_and_vpngate.html"/>
     <updated>2013-10-20T00:00:00+08:00</updated>
     <id>http://XuHaoJun.github.io/blog/openvpn_and_vpngate</id>
@@ -502,7 +502,7 @@ sudo openvpn --config /tmp/vg198681512520131020-16665-13qjlwe
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Ruby Block Match and Jump (Emacs Evil-mode)]]></title>
+    <title type="html"><![CDATA[Ruby block match and jump (emacs evil-mode)]]></title>
     <link href="http://XuHaoJun.github.io/blog/2013-10-19-evil-ruby-jump-item.html"/>
     <updated>2013-10-19T00:00:00+08:00</updated>
     <id>http://XuHaoJun.github.io/blog/evil-ruby-jump-item</id>
@@ -640,7 +640,7 @@ puts pst.pretty_inspect
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Emacs 自動縮進 Ruby's If-else]]></title>
+    <title type="html"><![CDATA[Emacs 自動縮進 Ruby's if-else]]></title>
     <link href="http://XuHaoJun.github.io/blog/2013-08-29-emacs-ruby-if-else-intdent.html"/>
     <updated>2013-08-29T00:00:00+08:00</updated>
     <id>http://XuHaoJun.github.io/blog/emacs-ruby-if-else-intdent</id>
@@ -1325,7 +1325,7 @@ gsub(<span style="color: #2aa198;">/(\p{Han})\n(\p{Han})/</span>m, <span style="
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[使用 Pentadactyl (Firefox Add-on)]]></title>
+    <title type="html"><![CDATA[使用 Pentadactyl (Firefox add-on)]]></title>
     <link href="http://XuHaoJun.github.io/blog/2013-08-17-my-pentadactyl-tip.html"/>
     <updated>2013-08-17T00:00:00+08:00</updated>
     <id>http://XuHaoJun.github.io/blog/my-pentadactyl-tip</id>
