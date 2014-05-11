@@ -2,7 +2,7 @@
 #+DATE: 2013-08-25
 #+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
 #+JEKYLL_LAYOUT: post
-#+JEKYLL_CATEGORIES: ruby programming
+#+JEKYLL_CATEGORIES: ruby
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
 #+OPTIONS: toc:1

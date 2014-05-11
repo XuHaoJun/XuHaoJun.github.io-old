@@ -2,7 +2,7 @@
 #+DATE: 2013-08-27
 #+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
 #+JEKYLL_LAYOUT: post
-#+JEKYLL_CATEGORIES: ruby programming algorithm
+#+JEKYLL_CATEGORIES: ruby algorithm
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
 #+HTML_MATHJAX: align:"left" mathml:t path:"/MathJax/MathJax.js"
