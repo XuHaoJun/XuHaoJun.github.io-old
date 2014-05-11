@@ -2,7 +2,7 @@
 title: "阿姆斯壯數 (Ruby)"
 date: 2013-08-27
 layout: post
-categories: ruby programming algorithm
+categories: ruby algorithm
 published: true
 comments: true
 ---
@@ -17,29 +17,28 @@ comments: true
 </li>
 </ul>
 <p>
-指一 N 位数，其各个数之 N 次方和等于该数。 <br/>
+指一 N 位数，其各个数之 N 次方和等于该数。 <br  />
 </p>
 
 <p>
-例如 153、370、371 及 407 就是三位數的水仙花数，其各个数之立方和等于该数： <br/>
+例如 153、370、371 及 407 就是三位數的水仙花数，其各个数之立方和等于该数： <br  />
 <!-- more -->
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_e141c033bb0e669b266fc28f8d36f2011481ba63.png"  alt="$153 = 1^3 + 5^3 + 3^3$"/> <br/>
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_9eb5ee3740baed1f5a29bcd886e4d39db8abae6f.png"  alt="$370 = 3^3 + 7^3 + 0^3$"/> <br/>
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_06e1db69575b29de5a03efa3759af10c7e7d8c4c.png"  alt="$371 = 3^3 + 7^3 + 1^3$"/> <br/>
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_8b45137dca877cbbdfd1f5e616004b03035b6add.png"  alt="$407 = 4^3 + 0^3 + 7^3$"/>
+<img src="ltxpng/2013-08-27-armstrong-num-ruby_3c11228c9afa02aa3012bc761d26fc3c0b3b084b.png" alt="$153 = 1^3 + 5^3 + 3^3$" /> <br  />
+<img src="ltxpng/2013-08-27-armstrong-num-ruby_e41f84cbd6ed34570ae3573d82d55f21c09ffa21.png" alt="$370 = 3^3 + 7^3 + 0^3$" /> <br  />
+<img src="ltxpng/2013-08-27-armstrong-num-ruby_8d7327c9ad437abdf8c5372ec1719e39e9c6d232.png" alt="$371 = 3^3 + 7^3 + 1^3$" /> <br  />
+<img src="ltxpng/2013-08-27-armstrong-num-ruby_f55bd90aa0eb111ee965ee939ac4ce682e6aba46.png" alt="$407 = 4^3 + 0^3 + 7^3$" />
 </p>
 </div>
 </div>
-
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Source code</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-不曉得型別轉來轉去算不算壞習慣&#x2026;。 <br/>
+不曉得型別轉來轉去算不算壞習慣&#x2026;。 <br  />
 </p>
 
 <p>
-有用到 lazy 這個 enumerator，如果沒用 lazy 的話就會當在那裡了，lazy 感覺很像是一個一個求值後在判斷在存值，沒有使用的話則一次全部求值後在做事。 <br/>
+有用到 lazy 這個 enumerator，如果沒用 lazy 的話就會當在那裡了，lazy 感覺很像是一個一個求值後在判斷在存值，沒有使用的話則一次全部求值後在做事。 <br  />
 </p>
 
 <p>

@@ -2,7 +2,7 @@
 #+DATE: 2014-05-06
 #+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
 #+JEKYLL_LAYOUT: post
-#+JEKYLL_CATEGORIES: clojure clojurescript emacs
+#+JEKYLL_CATEGORIES: clojure emacs
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
 #+OPTIONS: toc:2

@@ -2,7 +2,7 @@
 #+DATE: 2013-08-19
 #+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
 #+JEKYLL_LAYOUT: post
-#+JEKYLL_CATEGORIES: emacs org-mode html
+#+JEKYLL_CATEGORIES: emacs org-mode
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
 
