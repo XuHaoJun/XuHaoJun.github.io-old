@@ -1,0 +1,30 @@
+#+TITLE: 黑白棋 (Clojurescript)
+#+DATE: 2014-05-11
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: clojure clojurescript html5
+#+JEKYLL_PUBLISHED: true
+
+一個簡單的單機網頁(html5)黑白棋遊戲。
+
+[[https://xuhaojun.github.io/reversi/][Try it Online]]
+
+[[https://github.com/XuHaoJun/reversi][Source code]]
+
+{{{more}}}
+
+* 實現算法
+每次下棋對其八個鄰近方格做掃描，如果是相反顏色的棋子，就往其方位向前找到另一個相同顏
+色的棋子，若有找到則翻棋，沒有則遍歷下一個方位。
+
+* 電腦(AI)下棋算法
+暫時隨機，在看用哪種好。
+
+* Clojurescript 使用心得
+一堆括號阿！！每次都要讓函數回傳有意義的值，Debug 起來也很容易，一個函數影響的範
+圍就只有他的參數而已，沒有隱示參數(全域變數、成員變數)的話就很好測試，每個函數就
+盡量小小的做一件事，不過到使用 [[https://github.com/photonstorm/phaser][phaser]] (javascript html5 game framework)那層就一
+堆副作用囉!(set! xxx yyy)。
+
+* 截圖
+[[./img/reversi-game.png]]
