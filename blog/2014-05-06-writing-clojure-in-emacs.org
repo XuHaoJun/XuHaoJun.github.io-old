@@ -5,6 +5,8 @@
 #+JEKYLL_CATEGORIES: clojure clojurescript emacs
 #+JEKYLL_PUBLISHED: true
 #+JEKYLL_COMMENTS: true
+#+OPTIONS: toc:2
+#+STYLE: <style type="text/css">#table-of-contents{ max-width:100%; }</style>
 
 簡單的 clojure/clojurescript 開發環境。
 
@@ -106,8 +108,7 @@
 
 =M-n=, =M-p= 上下選擇候選鍵。
 
-#+ATTR_HTML: :align left
-https://company-mode.github.io/images/company-elisp.png
+[[https://company-mode.github.io/images/company-elisp.png]]
 
 * 其他插件推薦
 [[https://github.com/jlr/rainbow-delimiters][rainbow-delimiters]]
@@ -115,3 +116,6 @@ https://company-mode.github.io/images/company-elisp.png
 [[https://gitorious.org/evil/pages/Home][evil]]
 
 [[http://www.emacswiki.org/emacs/InteractivelyDoThings][ido]]
+
+* 截圖
+[[./img/emacs-clojure-development.png]]
