@@ -1,0 +1,33 @@
+#+TITLE: Linux 遠程文件編輯
+#+DATE: 2014-05-15
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: linux remote
+#+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
+
+大部分都是 ssh 連線過去使用那邊的環境來修改檔案，如果遠程環境沒有稱手的編輯器可是
+一件很惱人的一件事，所以找了一些方法在本地編輯文件。
+
+{{{more}}}
+
+* SSH Filesystem
+[[http://fuse.sourceforge.net/sshfs.html][sshfs]] 是將遠程的文件系統掛載在本地，之後就可以在本地編輯了，也會同步更新上去。
+**  Example:
+下面的命令會將遠程的家目錄掛載在你本地的 =~/dir= 。
+#+BEGIN_SRC sh
+  sshfs user@yourdomain:/home/user ~/dir
+#+END_SRC
+之後就可以隨心所欲的編輯 =~/dir= 之下的東西了，當然不侷限於來編輯，像是 gimp、
+mplayer 什麼的都可以！
+
+* Emacs TRAMP
+[[https://www.gnu.org/software/tramp/][TRAMP]] 是在 Emacs 之下來遠程編輯文件的東西。
+
+** Example:
+在 Emacs 之下 =M-x find-file= 後輸入 =/ssh:user@yourdomain= 然後 Enter 鍵，就會
+看到你的家目錄會以 =dired-mode= 的形式開啟，之後選擇你的檔案來編輯！
+
+* 總結
+如果本地環境允許的話就安裝 =sshfs= 吧！這樣方便許多 =Emacs TRAMP= 只能用來編輯文
+件，而 =sshfs= 則不只用來編輯文件，用來看遠程的 pdf 或影音檔或 copy 檔案都很方便！

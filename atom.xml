@@ -4,7 +4,7 @@
   <title><![CDATA[(xu-hao-jun)]]></title>
   <link href="http://XuHaoJun.github.io/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2014-05-12T11:24:16+08:00</updated>
+  <updated>2014-05-15T21:11:26+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -12,6 +12,74 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linux 遠程文件編輯]]></title>
+    <link href="http://XuHaoJun.github.io/blog/2014-05-15-linux-remote-file-edit.html"/>
+    <updated>2014-05-15T00:00:00+08:00</updated>
+    <id>http://XuHaoJun.github.io/blog/linux-remote-file-edit</id>
+    <content type="html"><![CDATA[<p>
+大部分都是 ssh 連線過去使用那邊的環境來修改檔案，如果遠程環境沒有稱手的編輯器可是一件很惱人的一件事，所以找了一些方法在本地編輯文件。
+</p>
+
+<p>
+<!-- more -->
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">SSH Filesystem</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="http://fuse.sourceforge.net/sshfs.html">sshfs</a> 是將遠程的文件系統掛載在本地，之後就可以在本地編輯了，也會同步更新上去。
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Example:</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+下面的命令會將遠程的家目錄掛載在你本地的 <code>~/dir</code> 。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">sshfs user@yourdomain:/home/user ~/dir
+</pre>
+</div>
+<p>
+之後就可以隨心所欲的編輯 <code>~/dir</code> 之下的東西了，當然不侷限於來編輯，像是 gimp、
+mplayer 什麼的都可以！
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Emacs TRAMP</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://www.gnu.org/software/tramp/">TRAMP</a> 是在 Emacs 之下來遠程編輯文件的東西。
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Example:</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+在 Emacs 之下 <code>M-x find-file</code> 後輸入 <code>/ssh:user@yourdomain</code> 然後 Enter 鍵，就會看到你的家目錄會以 <code>dired-mode</code> 的形式開啟，之後選擇你的檔案來編輯！
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">總結</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+如果本地環境允許的話就安裝 <code>sshfs</code> 吧！這樣方便許多 <code>Emacs TRAMP</code> 只能用來編輯文件，而 <code>sshfs</code> 則不只用來編輯文件，用來看遠程的 pdf 或影音檔或 copy 檔案都很方便！
+</p>
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[黑白棋 (Clojurescript)]]></title>
