@@ -118,6 +118,67 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-25T00:00:00+08:00" pubdate data-updated="true">Aug 25<span>th</span>, 2013</time>
+        
+           | <a href="/blog/2013-08-25-gen-uniq-nums-ruby.html#disqus_thread"
+             data-disqus-identifier="http://XuHaoJun.github.io/blog/2013-08-25-gen-uniq-nums-ruby.html">Comments</a>
+        
+      </p>
+    
+    
+      <h1 class="entry-title"><a href="/blog/2013-08-25-gen-uniq-nums-ruby.html">產生一組不重複整數的集合(Ruby)</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix"><div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Normal Way - 1</a></li>
+<li><a href="#sec-2">Normal Way - 2</a></li>
+<li><a href="#sec-3">Set Way</a></li>
+<li><a href="#sec-4">Range Way - 1</a></li>
+<li><a href="#sec-5">Range Way - 2</a></li>
+<li><a href="#sec-6">Benchmark them</a></li>
+</ul>
+</div>
+</div>
+<p>
+先用 Ruby 寫以前上 Android 中猜數字範例中用到的算法：
+</p>
+
+<p>
+</div>
+  
+  
+    <footer>
+      <a class="btn btn-default" rel="full-article" href="/blog/2013-08-25-gen-uniq-nums-ruby.html">Read more &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-23T00:00:00+08:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2013</time>
         
            | <a href="/blog/2013-08-23-emacs-org-octopress.html#disqus_thread"
@@ -416,6 +477,8 @@ efficient and especially more keyboard accessible.
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014-05-16-my-linux-desktop.html">我的 Linux 桌面</a>
+    
     <a class="list-group-item " href="/blog/2014-05-15-linux-remote-file-edit.html">Linux 遠程文件編輯</a>
     
     <a class="list-group-item " href="/blog/2014-05-11-clojurescript-reversi-game.html">黑白棋 (Clojurescript)</a>
@@ -424,8 +487,6 @@ efficient and especially more keyboard accessible.
     
     <a class="list-group-item " href="/blog/2014-05-06-writing-clojure-in-emacs.html">Clojure/Clojurescript Emacs 開發環境</a>
     
-    <a class="list-group-item " href="/blog/2013-10-20-openvpn_and_vpngate.html">Openvpn + Vpn Gate + Ruby Script</a>
-    
   </div>
 </section>
 <section class="panel panel-default">
@@ -433,7 +494,7 @@ efficient and especially more keyboard accessible.
     <h3 class="panel-title">Tags</h3>
   </div>
   <div id="category-list" class="list-group">
-    <a class='list-group-item' href='/blog/categories/ruby/'><span class='badge'> 6 </span>ruby</a><a class='list-group-item' href='/blog/categories/emacs/'><span class='badge'> 5 </span>emacs</a><a class='list-group-item' href='/blog/categories/clojure/'><span class='badge'> 3 </span>clojure</a><a class='list-group-item' href='/blog/categories/algorithm/'><span class='badge'> 2 </span>algorithm</a><a class='list-group-item' href='/blog/categories/org-mode/'><span class='badge'> 2 </span>org-mode</a><a class='list-group-item' href='/blog/categories/linux/'><span class='badge'> 1 </span>linux</a><a class='list-group-item' href='/blog/categories/github/'><span class='badge'> 1 </span>github</a><a class='list-group-item' href='/blog/categories/html5/'><span class='badge'> 1 </span>html5</a><a class='list-group-item' href='/blog/categories/firefox/'><span class='badge'> 1 </span>firefox</a><a class='list-group-item' href='/blog/categories/octopress/'><span class='badge'> 1 </span>octopress</a><a class='list-group-item' href='/blog/categories/openvpn/'><span class='badge'> 1 </span>openvpn</a><a class='list-group-item' href='/blog/categories/evil-mode/'><span class='badge'> 1 </span>evil-mode</a><a class='list-group-item' href='/blog/categories/remote/'><span class='badge'> 1 </span>remote</a><a class='list-group-item' href='/blog/categories/clojurescript/'><span class='badge'> 1 </span>clojurescript</a><a class='list-group-item' href='/blog/categories/vpngate/'><span class='badge'> 1 </span>vpngate</a><a class='list-group-item' href='/blog/categories/web/'><span class='badge'> 1 </span>web</a>
+    <a class='list-group-item' href='/blog/categories/ruby/'><span class='badge'> 6 </span>ruby</a><a class='list-group-item' href='/blog/categories/emacs/'><span class='badge'> 5 </span>emacs</a><a class='list-group-item' href='/blog/categories/clojure/'><span class='badge'> 3 </span>clojure</a><a class='list-group-item' href='/blog/categories/algorithm/'><span class='badge'> 2 </span>algorithm</a><a class='list-group-item' href='/blog/categories/org-mode/'><span class='badge'> 2 </span>org-mode</a><a class='list-group-item' href='/blog/categories/linux/'><span class='badge'> 2 </span>linux</a><a class='list-group-item' href='/blog/categories/github/'><span class='badge'> 1 </span>github</a><a class='list-group-item' href='/blog/categories/html5/'><span class='badge'> 1 </span>html5</a><a class='list-group-item' href='/blog/categories/firefox/'><span class='badge'> 1 </span>firefox</a><a class='list-group-item' href='/blog/categories/octopress/'><span class='badge'> 1 </span>octopress</a><a class='list-group-item' href='/blog/categories/openvpn/'><span class='badge'> 1 </span>openvpn</a><a class='list-group-item' href='/blog/categories/evil-mode/'><span class='badge'> 1 </span>evil-mode</a><a class='list-group-item' href='/blog/categories/remote/'><span class='badge'> 1 </span>remote</a><a class='list-group-item' href='/blog/categories/clojurescript/'><span class='badge'> 1 </span>clojurescript</a><a class='list-group-item' href='/blog/categories/vpngate/'><span class='badge'> 1 </span>vpngate</a><a class='list-group-item' href='/blog/categories/web/'><span class='badge'> 1 </span>web</a>
   </div>
 </section>
 
