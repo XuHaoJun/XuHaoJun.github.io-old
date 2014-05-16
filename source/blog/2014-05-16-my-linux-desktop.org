@@ -40,11 +40,7 @@ Manager 只是桌面環境中的一個子功能罷了，特色就是 dynamic til
 [[http://moztw.org/firefox/][Firefox]] 是我主要使用的瀏覽器，唯一讓我重度使用的原因：[[http://5digits.org/pentadactyl/][Pentadactyl]]， 簡單來說就是
 以鍵盤為主來瀏覽網頁！
 
-直接上我使用 Pendatactyl 的影片：
-
-#+begin_html
-  <iframe width="560" height="315" src="//www.youtube.com/embed/BuANeWJR-lM?rel=0" frameborder="0" allowfullscreen></iframe>
-#+end_html
+直接上我使用 Pendatactyl 的影片： [[http://youtu.be/BuANeWJR-lM][Pentadactyl Show]]
 
 * Editor
 主力編輯器： [[https://www.gnu.org/software/emacs/][Emacs]] ，現在這篇文章就是在 Emacs 下撰寫的和使用他的 [[http://orgmode.org/][Org-mode]] ，也是
