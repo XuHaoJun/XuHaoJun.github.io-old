@@ -4,7 +4,7 @@
   <title><![CDATA[(xu-hao-jun)]]></title>
   <link href="http://XuHaoJun.github.io/atom.xml" rel="self"/>
   <link href="http://XuHaoJun.github.io/"/>
-  <updated>2014-05-16T21:29:09+08:00</updated>
+  <updated>2014-05-23T21:44:48+08:00</updated>
   <id>http://XuHaoJun.github.io/</id>
   <author>
     <name><![CDATA[XuHaoJun]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Astar Path Finding Example (C)]]></title>
+    <link href="http://XuHaoJun.github.io/blog/2014-05-23-astar-c.html"/>
+    <updated>2014-05-23T00:00:00+08:00</updated>
+    <id>http://XuHaoJun.github.io/blog/astar-c</id>
+    <content type="html"><![CDATA[<p>
+在學校出了個需要寫尋路的期末作業，說實話大一只學過 C++ ，到現在才發覺自己居然沒有認真學過 C，所以花了三天的時間寫出來能過關的作業： <a href="https://github.com/XuHaoJun/astar-c">astar-c</a> 。
+</p>
+
+<p>
+<!-- more -->
+</p>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">作業介紹：</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+地圖初始大小為 20x20 的矩形，人物起始座標是在 <code>(0, 0)</code> ，分別要照順序走 <code>((10,
+10), (5, 5), (15, 15))</code> 這個路徑，且不能重複走兩次，像是你直接斜著走到 <code>(10,
+10)</code> 的話就會經過 <code>(5, 5)</code> 就不符合作業要求了，之後在地圖上隨機放 3~5 個 2x2 的矩形方塊作為障礙物，此障礙物不能在初始點和路徑上，並且要有方法繞過障礙物，若路徑完全被擋死請顯示出來，顯示要求不拘（我是每走一步就印出整張地圖和座標訊息）。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">算法介紹</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="http://www.policyalmanac.org/games/aStarTutorial.htm">A* Pathfinding for Beginners</a>
+</p>
+
+<p>
+我 Astar 的算法是從上面這個網站學到的，如果你是搜尋 Astar 到此文章的，強烈建議你看第一手原文，不要看我這殘缺二手中文！
+</p>
+
+<p>
+簡而言之就是每走一步就對周遭的格子進行估值，然後從中選出最適合的格子，然後反覆直到目的或沒路徑。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">用 C 的心得</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+根本惡夢阿，釋放錯記憶體，指標指錯地方，用到很多 <code>Linked List</code> 的結構，每次循環這個結構都要開個 temp 變量，Debug De 到死，現在那個寫出來的作業懶的和手動釋放記憶體爭鬥了，等忙完其他事在開始重寫那部份吧。
+</p>
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[我的 Linux 桌面]]></title>

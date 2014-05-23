@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>阿姆斯壯數 (Ruby) - (xu-hao-jun)</title>
+  <title>Astar Path Finding Example (C) - (xu-hao-jun)</title>
   <meta name="author" content="XuHaoJun">
 
   
@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://XuHaoJun.github.io/blog/2013-08-27-armstrong-num-ruby.html">
+  <link rel="canonical" href="http://XuHaoJun.github.io/blog/2014-05-23-astar-c.html">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="(xu-hao-jun)" type="application/atom+xml">
 
@@ -114,7 +114,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-27T00:00:00+08:00" pubdate data-updated="true">Aug 27<span>th</span>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-23T00:00:00+08:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://XuHaoJun.github.io">Comments</a>
@@ -123,7 +123,7 @@
     
     
     <h1 class="entry-title">
-        阿姆斯壯數 (Ruby)
+        Astar Path Finding Example (C)
         
     </h1>
     
@@ -131,72 +131,46 @@
 
 
 <div class="entry-content clearfix"><p>
-寫一些簡單的演算法來熟悉 Ruby。
+在學校出了個需要寫尋路的期末作業，說實話大一只學過 C++ ，到現在才發覺自己居然沒有認真學過 C，所以花了三天的時間寫出來能過關的作業： <a href="https://github.com/XuHaoJun/astar-c">astar-c</a> 。
+</p>
+
+<p>
+<!-- more -->
 </p>
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Armstrong number</h2>
+<h2 id="sec-1">作業介紹：</h2>
 <div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li><a href="https://zh.wikipedia.org/wiki/%25E6%25B0%25B4%25E4%25BB%2599%25E8%258A%25B1%25E6%2595%25B0">阿姆斯壯數 - WiKi</a>
-</li>
-</ul>
 <p>
-指一 N 位数，其各个数之 N 次方和等于该数。 <br  />
+地圖初始大小為 20x20 的矩形，人物起始座標是在 <code>(0, 0)</code> ，分別要照順序走 <code>((10,
+10), (5, 5), (15, 15))</code> 這個路徑，且不能重複走兩次，像是你直接斜著走到 <code>(10,
+10)</code> 的話就會經過 <code>(5, 5)</code> 就不符合作業要求了，之後在地圖上隨機放 3~5 個 2x2 的矩形方塊作為障礙物，此障礙物不能在初始點和路徑上，並且要有方法繞過障礙物，若路徑完全被擋死請顯示出來，顯示要求不拘（我是每走一步就印出整張地圖和座標訊息）。
 </p>
+</div>
+</div>
 
-<p>
-例如 153、370、371 及 407 就是三位數的水仙花数，其各个数之立方和等于该数： <br  />
-<!-- more -->
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_3c11228c9afa02aa3012bc761d26fc3c0b3b084b.png" alt="$153 = 1^3 + 5^3 + 3^3$" /> <br  />
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_e41f84cbd6ed34570ae3573d82d55f21c09ffa21.png" alt="$370 = 3^3 + 7^3 + 0^3$" /> <br  />
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_8d7327c9ad437abdf8c5372ec1719e39e9c6d232.png" alt="$371 = 3^3 + 7^3 + 1^3$" /> <br  />
-<img src="ltxpng/2013-08-27-armstrong-num-ruby_f55bd90aa0eb111ee965ee939ac4ce682e6aba46.png" alt="$407 = 4^3 + 0^3 + 7^3$" />
-</p>
-</div>
-</div>
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Source code</h2>
+<h2 id="sec-2">算法介紹</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-不曉得型別轉來轉去算不算壞習慣&#x2026;。 <br  />
+<a href="http://www.policyalmanac.org/games/aStarTutorial.htm">A* Pathfinding for Beginners</a>
 </p>
 
 <p>
-有用到 lazy 這個 enumerator，如果沒用 lazy 的話就會當在那裡了，lazy 感覺很像是一個一個求值後在判斷在存值，沒有使用的話則一次全部求值後在做事。 <br  />
+我 Astar 的算法是從上面這個網站學到的，如果你是搜尋 Astar 到此文章的，強烈建議你看第一手原文，不要看我這殘缺二手中文！
 </p>
 
 <p>
-懶的想怎麼做優化了，怕到時候改一改可讀性就沒現在這個好了，先留這個作筆記。
+簡而言之就是每走一步就對周遭的格子進行估值，然後從中選出最適合的格子，然後反覆直到目的或沒路徑。
 </p>
-
-<div class="org-src-container">
-
-<pre class="src src-ruby"><span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Integer</span>
-  <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">armstrong_num?</span> <span style="color: #586e75;"># </span><span style="color: #586e75;">may be have more better name..</span>
-    sum = 0
-    digits = <span style="color: #268bd2;">self</span>.to_s.length
-    digits.times { |n| sum += (<span style="color: #268bd2;">self</span>.to_s[n].to_i ** digits) }
-    <span style="color: #859900; font-weight: bold;">return</span> sum == <span style="color: #268bd2;">self</span>
-  <span style="color: #859900; font-weight: bold;">end</span>
-<span style="color: #859900; font-weight: bold;">end</span>
-
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#19977;&#20301;&#25976;&#30340;&#25152;&#26377;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
-(100...1000).select{ |x| x.armstrong_num? }
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [153, 370, 371, 407]</span>
-
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#22235;&#20301;&#25976;&#30340;&#31532;&#19968;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
-(1000...10000).select{ |x| x.armstrong_num? }.first(1)
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [1634]</span>
-
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#21069; 15 &#20491;&#38463;&#22982;&#26031;&#22767;&#25976;</span>
-(1..<span style="color: #b58900;">Float</span>::<span style="color: #b58900;">INFINITY</span>).lazy.select{ |x| x.armstrong_num? }.first(15)
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208]</span>
-
-<span style="color: #586e75;"># </span><span style="color: #586e75;">&#21069;&#19977;&#20491;&#38463;&#22982;&#26031;&#22767;&#25976;&#65292;&#24478;&#19977;&#20301;&#25976;&#38283;&#22987;</span>
-(100..<span style="color: #b58900;">Float</span>::<span style="color: #b58900;">INFINITY</span>).lazy.select{ |x| x.armstrong_num? }.first(3)
-<span style="color: #586e75;"># </span><span style="color: #586e75;">=&gt; [153, 370, 371]</span>
-</pre>
 </div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">用 C 的心得</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+根本惡夢阿，釋放錯記憶體，指標指錯地方，用到很多 <code>Linked List</code> 的結構，每次循環這個結構都要開個 temp 變量，Debug De 到死，現在那個寫出來的作業懶的和手動釋放記憶體爭鬥了，等忙完其他事在開始重寫那部份吧。
+</p>
 </div>
 </div>
 </div>
@@ -222,13 +196,13 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-27T00:00:00+08:00" pubdate data-updated="true">Aug 27<span>th</span>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-23T00:00:00+08:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
+    <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/c/'>c</a>
   
 </span>
 
@@ -245,10 +219,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2013-08-25-gen-uniq-nums-ruby.html" title="Previous Post: 產生一組不重複整數的集合(Ruby)">&laquo; 產生一組不重複整數的集合(Ruby)</a></li>
+            <li class="previous"><a href="/blog/2014-05-16-my-linux-desktop.html" title="Previous Post: 我的 Linux 桌面">&laquo; 我的 Linux 桌面</a></li>
             
-            
-            <li class="next"><a href="/blog/2013-08-29-emacs-ruby-if-else-intdent.html" title="Next Post: Emacs 自動縮進 Ruby's if-else">Emacs 自動縮進 Ruby's if-else &raquo;</a></li>
             
           </ul>
         
@@ -273,7 +245,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014-05-23-astar-c.html">Astar Path Finding Example (C)</a>
+    <a class="list-group-item active" href="/blog/2014-05-23-astar-c.html">Astar Path Finding Example (C)</a>
     
     <a class="list-group-item " href="/blog/2014-05-16-my-linux-desktop.html">我的 Linux 桌面</a>
     
@@ -322,8 +294,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://XuHaoJun.github.io/blog/2013-08-27-armstrong-num-ruby.html';
-        var disqus_url = 'http://XuHaoJun.github.io/blog/2013-08-27-armstrong-num-ruby.html';
+        var disqus_identifier = 'http://XuHaoJun.github.io/blog/2014-05-23-astar-c.html';
+        var disqus_url = 'http://XuHaoJun.github.io/blog/2014-05-23-astar-c.html';
         var disqus_script = 'embed.js';
       
     (function () {

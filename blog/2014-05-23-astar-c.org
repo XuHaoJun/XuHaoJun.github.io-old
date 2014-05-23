@@ -1,0 +1,32 @@
+#+TITLE: Astar Path Finding Example (C)
+#+DATE: 2014-05-23
+#+SETUPFILE: ~/.emacs.d/misc/org-mode/setupfile-sample.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: c algorithm
+#+JEKYLL_PUBLISHED: true
+#+JEKYLL_COMMENTS: true
+
+在學校出了個需要寫尋路的期末作業，說實話大一只學過 C++ ，到現在才發覺自己居然沒
+有認真學過 C，所以花了三天的時間寫出來能過關的作業： [[https://github.com/XuHaoJun/astar-c][astar-c]] 。
+
+{{{more}}}
+* 作業介紹：
+地圖初始大小為 20x20 的矩形，人物起始座標是在 =(0, 0)= ，分別要照順序走 =((10,
+10), (5, 5), (15, 15))= 這個路徑，且不能重複走兩次，像是你直接斜著走到 =(10,
+10)= 的話就會經過 =(5, 5)= 就不符合作業要求了，之後在地圖上隨機放 3~5 個 2x2 的矩
+形方塊作為障礙物，此障礙物不能在初始點和路徑上，並且要有方法繞過障礙物，若路
+徑完全被擋死請顯示出來，顯示要求不拘（我是每走一步就印出整張地圖和座標訊息）。
+
+* 算法介紹
+[[http://www.policyalmanac.org/games/aStarTutorial.htm][A* Pathfinding for Beginners]]
+
+我 Astar 的算法是從上面這個網站學到的，如果你是搜尋 Astar 到此文章的，強烈建議你看
+第一手原文，不要看我這殘缺二手中文！
+
+簡而言之就是每走一步就對周遭的格子進行估值，然後從中選出最適合的格子，然後反覆直
+到目的或沒路徑。
+
+* 用 C 的心得
+根本惡夢阿，釋放錯記憶體，指標指錯地方，用到很多 =Linked List= 的結構，每次循環
+這個結構都要開個 temp 變量，Debug De 到死，現在那個寫出來的作業懶的和手動釋放記憶體
+爭鬥了，等忙完其他事在開始重寫那部份吧。
